@@ -14,12 +14,17 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+
 Route::get('/', function () {
     return view('frontpage.home');
 });
+
+Route::resource('/', 'SanphamController');
+
 Route::get('/login', function () {
     return view('frontpage.login');
 });
+
 Route::get('/frontpage', function () {
     return view('frontpage.layout.frontpage');
 });
