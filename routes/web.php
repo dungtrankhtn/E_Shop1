@@ -21,6 +21,9 @@ Route::get('/', function () {
 
 Route::resource('/', 'ProductController');
 
+// Route::resource('/preview', 'ProductController');
+
+
 Route::get('/login', function () {
     return view('frontpage.login');
 });
