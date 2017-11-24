@@ -6,34 +6,34 @@
             <div class="section group">
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview.html"> <img src="images/pic4.png" alt="" /></a>
+                        <a href="preview.html"> <img src="https://cdn1.tgdd.vn/Products/Images/42/114111/iphone-x-256gb-1-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
-                        <h2>Iphone</h2>
-                        <p>Lorem ipsum dolor sit amet sed do eiusmod.</p>
+                        <h2>Iphone X 256GB</h2>
+                        <p>Hàng sắp về!</p>
                         <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
                     </div>
                 </div>
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview-5.html"><img src="images/pic3.png" alt="" / ></a>
+                        <a href="preview.html"><img src="https://cdn4.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
-                        <h2>Samsung</h2>
-                        <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-                        <div class="button"><span><a href="preview-5.html">Add to cart</a></span></div>
+                        <h2>Samsung Galaxy S8</h2>
+                        <p></p>
+                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
                     </div>
                 </div>
             </div>
             <div class="section group">
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview-3.html"> <img src="images/pic3.jpg" alt="" /></a>
+                        <a href="preview.html"> <img src="https://cdn4.tgdd.vn/Products/Images/44/88629/apple-macbook-pro-15-mlh32sa-h-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
-                        <h2>Acer</h2>
-                        <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-                        <div class="button"><span><a href="preview-3.html">Add to cart</a></span></div>
+                        <h2>Macbook Pro</h2>
+                        <p>Đẳng cấp Sang trọng</p>
+                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
                     </div>
                 </div>
                 <div class="listview_1_of_2 images_1_of_2">
@@ -54,10 +54,14 @@
             <section class="slider">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li><img src="images/1.jpg" alt=""/></li>
-                        <li><img src="images/2.jpg" alt=""/></li>
-                        <li><img src="images/3.jpg" alt=""/></li>
-                        <li><img src="images/4.jpg" alt=""/></li>
+                        <li><img src="http://cdn2.tgdd.vn/qcao/11_11_2017_16_16_21_Samsung-Note-FE-800-300.jpg" alt=""/></li>
+                        <li><img src="http://cdn4.tgdd.vn/qcao/30_10_2017_10_00_40_HC-Tra-Gop-800-300.png" alt=""/></li>
+                        <li><img src="http://cdn4.tgdd.vn/qcao/10_11_2017_16_25_39_Launching-Oppo-F5-800-300.png" alt=""/></li>
+                        <li><img src="http://cdn2.tgdd.vn/qcao/10_11_2017_10_18_01_iphone-big-800-300.png" alt=""/></li>
+                        <li><img src="http://cdn2.tgdd.vn/qcao/31_10_2017_00_44_51_phu-kien-loa-blu-800-300.png"></li>
+                        <li><img src="http://cdn3.tgdd.vn/qcao/09_11_2017_14_54_35_Moto-X4-800-300.png"></li>
+                        <li><img src="http://cdn2.tgdd.vn/qcao/22_11_2017_20_57_46_FlashSale-Vivo-V7-800-300.png"></li>
+                        <li><img src="http://cdn2.tgdd.vn/qcao/22_11_2017_09_34_08_iphoneX-800-300.png"></li>
                     </ul>
                 </div>
             </section>
