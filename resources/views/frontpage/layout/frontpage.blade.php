@@ -150,78 +150,10 @@
                             <div class="nag-mother-list">
                                 <div class="navg-drop-main">
                                     <div class="nav-drop">
-                                        <li><a href="products.html">Product 1</a></li>
-                                        <li><a href="products.html">Product 2</a></li>
-                                        <li><a href="products.html">Product 3</a>
+                                        <li><a href="products.html">Điện Thoại</a></li>
+                                        <li><a href="products.html">Laptop</a></li>
+                                        
                                         </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 1</a></li>
-                                        <li><a href="products.html">Product 2</a></li>
-                                        <li><a href="products.html">Product 3</a>
-                                        </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 1</a></li>
-                                        <li><a href="products.html">Product 2</a></li>
-                                        <li><a href="products.html">Product 3</a></li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 1</a></li>
-                                        <li><a href="products.html">Product 2</a></li>
-                                        <li><a href="products.html">Product 3</a></li>
-                                    </div>
-                                    <div class="clear"> </div>
-                                </div>
-                                <div class="navg-drop-main">
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a>
-
-                                        </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a>
-                                        </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a></li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a></li>
-                                    </div>
-                                    <div class="clear"> </div>
-                                </div>
-                                <div class="navg-drop-main">
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a>
-
-                                        </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a>
-                                        </li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a></li>
-                                    </div>
-                                    <div class="nav-drop">
-                                        <li><a href="products.html">Product 4</a></li>
-                                        <li><a href="products.html">Product 5</a></li>
-                                        <li><a href="products.html">Product 6</a></li>
                                     </div>
                                     <div class="clear"> </div>
                                 </div>
