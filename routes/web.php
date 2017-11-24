@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('frontpage.home');
 });
 
-Route::resource('/', 'SanphamController');
+Route::resource('/', 'ProductController');
 
 Route::get('/login', function () {
     return view('frontpage.login');

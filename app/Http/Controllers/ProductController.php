@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
-
-class SanphamController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class SanphamController extends Controller
     public function index()
     {
         //
-        $ds_sanpham = DB::select('select * from sanpham');
-        return view("frontpage.home", ['ds_sanpham' => $ds_sanpham]);
+        $product_list = DB::select('select * from product');
+        return view("frontpage.home", ['product_list' => $product_list]);
     }
 
     /**

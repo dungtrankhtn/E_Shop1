@@ -110,12 +110,12 @@
             </div>
             
                 <div class="section group">
-                    @foreach ($ds_sanpham as $sanpham)
+                    @foreach ($product_list as $product)
                     <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview-3.html"><img src="images/feature-pic1.png" alt="" /></a>
-                        <h2>{{ $sanpham->TenSP }}</h2>
+                        <a href="preview-3.html"><img src="{{$product->image}}" alt="" /></a>
+                        <h2>{{ $product->name }}</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        <p><span class="strike">{{ $sanpham->DonGia }}</span><span class="price">{{ $sanpham->DonGia }}</span></p>
+                        <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
                         <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
                         <div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>
                     </div>
