@@ -150,9 +150,9 @@
                             <div class="nag-mother-list">
                                 <div class="navg-drop-main">
                                     <div class="nav-drop">
-                                        <li><a href="resource">Điện thoại</a></li>
-                                        <li><a href="products.html">Laptop</a></li>
-                                        
+                                        @foreach ($product_type_list as $type_list)
+                                        <li><a href="{!!url('product',[$type_list->type])!!}"></a></li>
+                                        @endforeach
                                         </li>
                                     </div>
                                     <div class="clear"> </div>

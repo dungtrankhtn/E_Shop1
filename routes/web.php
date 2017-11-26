@@ -24,6 +24,9 @@ Route::get('/', function () {
 //Route get data cho trang sản phẩm (trang chủ).
 Route::resource('/', 'ProductController');
 
+// Route get data cho Trang sản phẩm(Product)
+Route::resource('/product', 'GetProductByTypeController');
+
 //Route get data cho trang chi tiết sản phẩm (theo id).
 Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']);
 
@@ -31,9 +34,10 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 Route::get('/login', function () {
     return view('frontpage.login');
 });
-Route::get('/product', function () {
-    return view('frontpage.product');
-});
+//Product by type
+Route::get('product/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
+
+// Default
 Route::get('/frontpage', function () {
     return view('frontpage.layout.frontpage');
 });
