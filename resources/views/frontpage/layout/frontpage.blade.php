@@ -4,12 +4,12 @@
     <title>Free Smart Store Website Template | Home :: w3layouts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <link href="../../../../css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../../../css/menu.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="../../../../js/jquery.min.js"></script>
+    <script src="../../../../js/script.js" type="text/javascript"></script>
+    <script type="../../../../text/javascript" src="js/move-top.js"></script>
+    <script type="../../../../text/javascript" src="js/easing.js"></script>
     <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 </head>
@@ -19,7 +19,7 @@
     <div class="header">
         <div class="header_top">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                <a href="{{ url('/') }}"><img src="images/logo.png" alt="" /></a>
             </div>
             <div class="header_top_right">
                 <div class="search_box">
@@ -144,14 +144,19 @@
             <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
             <nav>
                 <ul class="menu list-unstyled">
-                    <li><a href="/">HOME</a></li>
-                    <li class="activate"><a href="products.html">Products</a>
+                    <li><a href="{{ url('/') }}">HOME</a></li>
+                    <li class="activate"><a href="{{ url('/') }}">Sản phẩm</a>
                         <ul class="sub-menu list-unstyled">
                             <div class="nag-mother-list">
                                 <div class="navg-drop-main">
                                     <div class="nav-drop">
-                                        @foreach ($product_type_list as $type_list)
-                                        <li><a href="{!!url('product',[$type_list->type])!!}"></a></li>
+                                    <?php $menu_lv_1 = DB::table('product_type')->get();
+                                     ?>       
+                                        @foreach ($menu_lv_1 as $item_lv_1)
+                                        <li>
+                                        <?php $menu_lv_2 = DB::table('product')->where('type',$item_lv_1->type_id)->first(); ?>
+                                            <li><a href="{!!url('product-type',[$menu_lv_2->type])!!}">{{ $item_lv_1->type_name }}</a></li>
+                                        </li>
                                         @endforeach
                                         </li>
                                     </div>

@@ -29,11 +29,9 @@ class ProductController extends Controller
 
     public function get_product_by_type ($type)
     {
-        //Function cho trang chi tiết sản phẩm.
-
-        //Lấy sản phẩm trong product theo id.
-        $product_type = DB::table('product')->where('type',$type)->first();
-        return view("frontpage.layout.frontpage", ['product_type' => $product_type]);
+        
+        $product_type = DB::table('product')->where('type', $type)->get();
+        return view("frontpage.product", ['product_type' => $product_type]);
     }
     /**
      * Show the form for creating a new resource.

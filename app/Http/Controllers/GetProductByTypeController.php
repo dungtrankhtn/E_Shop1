@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 class GetProductByTypeController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class GetProductByTypeController extends Controller
      */
     public function index()
     {
-
+        $product_type_list = DB::select('select * from product');
+        return view("frontpage.layout.frontpage", ['product_type_list' => $product_type_list]);
     }
 
     /**
@@ -23,8 +25,7 @@ class GetProductByTypeController extends Controller
      */
     public function create()
     {
-        $product_type_list = DB::select('select * from product');
-        return view("frontpage.layout.frontpage", ['product_type_list' => $product_type_list]);
+        
     }
 
     /**

@@ -41,14 +41,16 @@
                 <div class="clear"></div>
             </div>
             <div class="section group">
+                @foreach ($product_type as $type)
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-3.html"><img src="images/feature-pic1.png" alt="" /></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                    <p><span class="strike">$528.22</span><span class="price">$505.22</span></p>
+                    <a href="preview-3.html"><img src="{{$type->image}}" alt="" /></a>
+                    <h2>{{ $type->name }}</h2>
+                    <p>{{ $type->decriptions }}</p>
+                    <p><span class="strike">{{ $type->price }}</span><span class="price">{{ $type->price }}</span></p>
                     <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
                     <div class="button"><span><a href="preview.html" class="details">Details</a></span></div>
                 </div>
+                @endforeach
             </div>
             <div class="content_bottom">
                 <div class="heading">
@@ -88,7 +90,6 @@
                 </div>
                 <div class="clear"></div>
             </div>
-
             <div class="section group">
                 <div class="grid_1_of_4 images_1_of_4">
                     <a href="preview-3.html"><img src="images/new-pic1.jpg" alt="" /></a>
