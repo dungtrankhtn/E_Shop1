@@ -144,7 +144,7 @@
             <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
             <nav>
                 <ul class="menu list-unstyled">
-                    <li><a href="{{ url('/') }}">HOME</a></li>
+                    <li><a href="{{ url('/') }}">Trang chủ</a></li>
                     <li class="activate"><a href="{{ url('/') }}">Sản phẩm</a>
                         <ul class="sub-menu list-unstyled">
                             <div class="nag-mother-list">
@@ -165,7 +165,7 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="products.html">Top Brand</a>
+                    <li><a href="products.html">Giao hàng</a>
                         <ul class="sub-menu list-unstyled sub-menu2">
                             <div class="navg-drop-main">
                                 <div class="nav-drop nav-top-brand">
@@ -179,27 +179,9 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="faq.html">Services</a>
+                    <li><a href="faq.html">Dịch vụ</a>
                         <ul class="sub-menu list-unstyled sub-menu3">
                             <div class="navg-drop-main">
-                                <div class="nav-drop">
-                                    <li><a href="products.html">Product 4</a></li>
-                                    <li><a href="products.html">Product 5</a></li>
-                                    <li><a href="products.html">Product 6</a>
-
-                                    </li>
-                                </div>
-                                <div class="nav-drop">
-                                    <li><a href="products.html">Product 4</a></li>
-                                    <li><a href="products.html">Product 5</a></li>
-                                    <li><a href="products.html">Product 6</a>
-                                    </li>
-                                </div>
-                                <div class="nav-drop">
-                                    <li><a href="products.html">Product 4</a></li>
-                                    <li><a href="products.html">Product 5</a></li>
-                                    <li><a href="products.html">Product 6</a></li>
-                                </div>
                                 <div class="nav-drop">
                                     <li><a href="products.html">Product 4</a></li>
                                     <li><a href="products.html">Product 5</a></li>
@@ -209,10 +191,9 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#">Delivery</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
                     <li><a href="faq.html">Faqs</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
                     <div class="clear"> </div>
                 </ul>
             </nav>

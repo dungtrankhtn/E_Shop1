@@ -31,7 +31,7 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 Route::get('/login', function () {
     return view('frontpage.login');
 });
-//Product by type
+//Route get data theo loại sản phẩm (type).
 Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
 
 // Default
