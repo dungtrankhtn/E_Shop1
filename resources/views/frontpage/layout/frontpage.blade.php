@@ -144,13 +144,13 @@
             <a id="touch-menu" class="mobile-menu" href="#">Menu</a>
             <nav>
                 <ul class="menu list-unstyled">
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li class="activate"><a href="products.html">Products</a>
                         <ul class="sub-menu list-unstyled">
                             <div class="nag-mother-list">
                                 <div class="navg-drop-main">
                                     <div class="nav-drop">
-                                        <li><a href="products.html">Điện Thoại</a></li>
+                                        <li><a href="resource">Điện thoại</a></li>
                                         <li><a href="products.html">Laptop</a></li>
                                         
                                         </li>

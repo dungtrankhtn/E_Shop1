@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
-class ProductController extends Controller
+class GetProductByTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product_list = DB::select('select * from product');
-        return view("frontpage.home", ['product_list' => $product_list]);
+
     }
 
     /**
