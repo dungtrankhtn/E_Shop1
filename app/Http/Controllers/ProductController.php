@@ -18,6 +18,15 @@ class ProductController extends Controller
         return view("frontpage.home", ['product_list' => $product_list]);
     }
 
+    public function preview ($id)
+    {
+        //Function cho trang chi tiết sản phẩm.
+
+        //Lấy sản phẩm trong product theo id.
+        $product_detail = DB::table('product')->where('id',$id)->first();
+        return view("frontpage.preview", ['product_detail' => $product_detail]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

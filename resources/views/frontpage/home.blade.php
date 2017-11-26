@@ -116,12 +116,12 @@
                 <div class="section group">
                     @foreach ($product_list as $product)
                     <div class="grid_1_of_4 images_1_of_4">
-                        <a href="preview.html"><img src="{{$product->image}}" alt="" /></a>
+                        <a href="{!!url('preview',[$product->id])!!}"><img src="{{$product->image}}" alt="" /></a>
                         <h2>{{ $product->name }}</h2>
                         <p>{{$product->decriptions}}</p>
                         <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
-                        <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
-                        <div class="button"><span><a href="preview.html" class="details">Details</a></span></div>
+                        <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="{!!url('preview',[$product->id])!!}" class="cart-button">Add to Cart</a></span> </div>
+                        <div class="button"><span><a href="{!!url('preview',[$product->id])!!}" class="details">Details</a></span></div>
                     </div>
                     @endforeach
                 </div>

@@ -1,32 +1,26 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Smart Store Website Template | Preview :: w3layouts</title>
+<title>Free Smart Store Website Template</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../../../../css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../../../../css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="../../../../css/menu.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
-<script src="js/jquery.min.js"></script>
-<script src="js/script.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script src="js/script.js" type="text/javascript"></script>
+<script src="../../../../js/jquery.min.js"></script>
+<script src="../../../../js/script.js" type="text/javascript"></script>
+<script type="../../../../text/javascript" src="js/move-top.js"></script>
+<script type="../../../../text/javascript" src="js/easing.js"></script>
+<script src="../../../../js/script.js" type="text/javascript"></script>
 </head>
 <body>
   <div class="wrap">
 	<div class="header">
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				<a href="index.html"><img src="../../../../images/logo.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
@@ -141,7 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
    </div>
 		   <div class="login">
-		   	   <span><a href="login.html"><img src="images/login.png" alt="" title="login"/></a></span>
+		   	   <span><a href="../../../../login.html"><img src="../../../../images/login.png" alt="" title="login"/></a></span>
 		   </div>
 		 <div class="clear"></div>
 	   </div>
@@ -330,17 +324,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     		</div>
     		<div class="clear"></div>
     	</div>
-    	
     	<div class="section group">
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
-						<img src="images/preview-img.jpg" alt="" />
+						<img src="{{ $product_detail->image }}" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2></h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>					
+					<h2>{{ $product_detail->name }}</h2>
+					<p>{{ $product_detail->decriptions }}</p>					
 					<div class="price">
-						<p>Price: <span>$500</span></p>
+						<p>Price: <span>{{ $product_detail->price }}</span></p>
 					</div>
 					<div class="available">
 						<p>Available Options :</p>
@@ -460,7 +453,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       				 </div>
  				</div>
  		</div>
- 		
  	</div>
 	</div>
 	
