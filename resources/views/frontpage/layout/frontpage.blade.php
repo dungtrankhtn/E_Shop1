@@ -165,7 +165,7 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="products.html">Giao hàng</a>
+                    <li><a href="{{ url('../topbrand') }}">Giao hàng</a>
                         <ul class="sub-menu list-unstyled sub-menu2">
                             <div class="navg-drop-main">
                                 <div class="nav-drop nav-top-brand">
@@ -179,7 +179,7 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="faq.html">Dịch vụ</a>
+                    <li><a href="{{ url('../services') }}">Dịch vụ</a>
                         <ul class="sub-menu list-unstyled sub-menu3">
                             <div class="navg-drop-main">
                                 <div class="nav-drop">
@@ -191,9 +191,9 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="about.html">Giới thiệu</a></li>
-                    <li><a href="faq.html">Faqs</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="{{ url('../about') }}">Giới thiệu</a></li>
+                    <li><a href="{{ url('../faq') }}">Faqs</a></li>
+                    <li><a href="{{ url('../contract') }}">Liên hệ</a></li>
                     <div class="clear"> </div>
                 </ul>
             </nav>

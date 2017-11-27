@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product_list = DB::table('product')->paginate(5);
+        $product_list = DB::table('product')->paginate(4);
         return view("frontpage.home", ['product_list' => $product_list]);
     }
 
