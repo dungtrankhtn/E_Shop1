@@ -33,8 +33,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="login-block">
             <form>
-                <input type="text" name="email" placeholder="Email" required="">
-                <input type="password" name="password" class="lock" placeholder="Password">
+                <input type="text" name="txtName" placeholder="Email" required="">
+                <input type="password" name="txtPassword" class="lock" placeholder="Password">
                 <div class="forgot-top-grids">
                     <div class="forgot-grid">
                         <ul>
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </div>
             </form>
-            <h5><a href="index.html">Go Back to Home</a></h5>
+            <h5><a href="{{ url('/') }}">Go Back to Home</a></h5>
         </div>
     </div>
 </div>

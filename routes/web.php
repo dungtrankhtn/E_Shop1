@@ -59,3 +59,6 @@ Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@ge
 Route::get('/frontpage', function () {
     return view('frontpage.layout.frontpage');
 });
+Route::get('/test', function () {
+    return view('admin.layouts.menu_layout');
+});

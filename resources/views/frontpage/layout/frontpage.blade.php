@@ -8,8 +8,8 @@
     <link href="../../../../css/menu.css" rel="stylesheet" type="text/css" media="all"/>
     <script src="../../../../js/jquery.min.js"></script>
     <script src="../../../../js/script.js" type="text/javascript"></script>
-    <script type="../../../../text/javascript" src="js/move-top.js"></script>
-    <script type="../../../../text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="../../../../js/move-top.js"></script>
+    <script type="text/javascript" src="../../../../js/easing.js"></script>
     <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 </head>
@@ -134,7 +134,7 @@
                     </script>
                 </div>
                 <div class="login">
-                    <span><a href="../login.html"><img src="images/login.png" alt="" title="login"/></a></span>
+                    <span><a href="{{ url('/login') }}"><img src="images/login.png" alt="" title="login"/></a></span>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -255,8 +255,8 @@
     });
 </script>
 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-<link href="css/flexslider.css" rel='stylesheet' type='text/css' />
-<script defer src="js/jquery.flexslider.js"></script>
+<link href="../../../../css/flexslider.css" rel='stylesheet' type='text/css' />
+<script defer src="../../../../js/jquery.flexslider.js"></script>
 <script type="text/javascript">
     $(function(){
         SyntaxHighlighter.all();
