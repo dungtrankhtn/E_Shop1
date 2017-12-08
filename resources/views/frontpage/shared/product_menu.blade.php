@@ -5,13 +5,12 @@
                 <div class="nav-drop">
                     <?php $menu_lv_1 = DB::table('product_type')->get();
                     ?>
-                    @foreach ($menu_lv_1 as $item_lv_1)
-                        <li>
-                        <?php $menu_lv_2 = DB::table('product')->where('type',$item_lv_1->type_id)->first(); ?>
-                        <li><a href="{!!url('product-type',[$menu_lv_2->type])!!}">{{ $item_lv_1->type_name }}</a></li>
-                        </li>
+                        @foreach ($menu_lv_1 as $item_lv_1)
+                            <li>
+                            <?php $menu_lv_2 = DB::table('product')->where('type',$item_lv_1->type_id)->first(); ?>
+                            <li><a href="{!!url('product-type',[$menu_lv_2->type])!!}">{{ $item_lv_1->type_name }}</a></li>
+                            </li>
                         @endforeach
-                        </li>
                 </div>
                 <div class="clear"> </div>
             </div>
