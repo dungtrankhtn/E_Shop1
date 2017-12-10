@@ -60,13 +60,10 @@ Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@ge
 
 //Route cho trang đăng nhập.
 
-
-<<<<<<< HEAD
 // Default
 Route::get('/frontpage', function () {
     return view('frontpage.layout.frontpage');
 });
-=======
 // Route cho admin
 Route::get('/dashboard', function () {
     return view('adminpage.dashboard');
@@ -111,5 +108,3 @@ Route::get('/product', function () {
 });
 Route::get('/price', function () {
     return view('adminpage.price');
-});
->>>>>>> 17c06c8c94a0078a2e056f1a742fc8e46add84e6
