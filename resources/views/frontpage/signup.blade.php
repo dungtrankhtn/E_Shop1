@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Login :: w3layouts</title>
+    <title>Shoppy an Admin Panel Category Flat Bootstrap Responsive Website Template | Signup :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -18,16 +18,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--Google Fonts-->
     <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-    <!--static chart-->
+    <!--//charts-->
 </head>
 <body>
-<div class="login-page">
-    <div class="login-main">
-        <div class="login-head">
-            <h1>Login</h1>
+<!--inner block start here-->
+<div class="signup-page-main">
+    <div class="signup-main">
+        <div class="signup-head">
+            <h1>Sign Up</h1>
         </div>
-        <div class="login-block">
+        <div class="signup-block">
             <form>
+                <input type="text" name="email" placeholder="Name" required="">
                 <input type="text" name="email" placeholder="Email" required="">
                 <input type="password" name="password" class="lock" placeholder="Password">
                 <div class="forgot-top-grids">
@@ -35,27 +37,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul>
                             <li>
                                 <input type="checkbox" id="brand1" value="">
-                                <label for="brand1"><span></span>Remember me</label>
+                                <label for="brand1"><span></span>I agree to the terms</label>
                             </li>
                         </ul>
                     </div>
-                    <div class="forgot">
-                        <a href="#">Forgot password?</a>
-                    </div>
+
                     <div class="clearfix"> </div>
                 </div>
-                <input type="submit" name="Sign In" value="Login">
-                <h3>Not a member?<a href="{{url('/signup')}}"> Sign up now</a></h3>
-                <h2>or login with</h2>
-                <div class="login-icons">
-                    <ul>
-                        <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
+                <input type="submit" name="Sign In" value="Sign up">
             </form>
-            <h5><a href="{{ url('/') }}">Go Back to Home</a></h5>
+            <div class="sign-down">
+                <h4>Already have an account? <a href="{{url('/login')}}"> Login here.</a></h4>
+                <h5><a href="{{url('/')}}">Go Back to Home</a></h5>
+            </div>
         </div>
     </div>
 </div>
@@ -65,7 +59,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <p>© 2016 Shoppy. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 </div>
 <!--COPY rights end here-->
-
 <!--scrolling js-->
 <script src="{{asset('admin/js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('admin/js/scripts.js')}}"></script>
@@ -74,7 +67,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- mother grid end here-->
 </body>
 </html>
-
 
 
 

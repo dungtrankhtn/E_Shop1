@@ -29,7 +29,7 @@
                 </div>
                 <div class="shopping_cart">
                     <div class="cart">
-                        <a href="#" title="View my shopping cart" rel="nofollow">
+                        <a href="{{ url('/cart') }}" title="View my shopping cart" rel="nofollow">
                             <strong class="opencart"> </strong>
                             <span class="cart_title">Cart</span>
                             <span class="no_product">(empty)</span>
@@ -134,7 +134,7 @@
                     </script>
                 </div>
                 <div class="login">
-                    <span><a href="../login.html"><img src="images/login.png" alt="" title="login"/></a></span>
+                    <span><a href="{{ url('/login') }}"><img src="{{asset('images/login.png')}}" alt="" title="login"/></a></span>
                 </div>
                 <div class="clear"></div>
             </div>
