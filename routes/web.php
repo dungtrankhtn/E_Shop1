@@ -15,13 +15,15 @@
 //    return view('welcome');
 //});
 
-
 //Route cho trang chủ
 Route::get('/', function () {
     return view('frontpage.home');
 });
 Route::get('/login', function () {
     return view('frontpage.login');
+});
+Route::get('/signup', function () {
+    return view('frontpage.signup');
 });
 // Top brand route
 Route::get('/topbrand', function () {
@@ -55,10 +57,48 @@ Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@ge
 //Route cho trang đăng nhập.
 
 
-// Default
-Route::get('/frontpage', function () {
-    return view('frontpage.layout.frontpage');
+// Route cho admin
+Route::get('/dashboard', function () {
+    return view('adminpage.dashboard');
 });
-Route::get('/test', function () {
-    return view('admin.layouts.menu_layout');
+Route::get('/grids', function () {
+    return view('adminpage.grids');
+});
+Route::get('/portlets', function () {
+    return view('adminpage.portlets');
+});
+Route::get('/buttons', function () {
+    return view('adminpage.buttons');
+});
+Route::get('/typography', function () {
+    return view('adminpage.typography');
+});
+Route::get('/icons', function () {
+    return view('adminpage.icons');
+});
+Route::get('/maps', function () {
+    return view('adminpage.maps');
+});
+//Chưa làm
+Route::get('/charts', function () {
+    return view('adminpage.charts');
+});
+// chưa làm inbox detail
+Route::get('/inbox', function () {
+    return view('adminpage.inbox');
+});
+Route::get('/inbox-details', function () {
+    return view('adminpage.inbox-details');
+});
+Route::get('/404', function () {
+    return view('adminpage.404');
+});
+Route::get('/blank', function () {
+    return view('adminpage.blank');
+});
+Route::get('/product', function () {
+    return view('adminpage.product');
+});
+Route::get('/price', function () {
+    return view('adminpage.price');
 });
