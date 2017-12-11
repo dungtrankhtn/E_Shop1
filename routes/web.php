@@ -57,7 +57,11 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 
 //Route get data theo loại sản phẩm (type).
 Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
+//Routet cho giỏ hàng
+	
+Route::get('mua-hang/{id}', ['as'=>'muahang', 'uses'=>'ProductController@muahang']);
 
+Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
 //Route cho trang đăng nhập.
 
 // Default
@@ -106,5 +110,6 @@ Route::get('/blank', function () {
 Route::get('/product', function () {
     return view('adminpage.product');
 });
-Route::get('/price', function () {
-    return view('adminpage.price');
+// Route::get('/price', function () {
+//     return view('adminpage.price');
+
