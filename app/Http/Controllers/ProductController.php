@@ -50,10 +50,16 @@ class ProductController extends Controller
     public function giohang()
     {
         $content = Cart::content(); 
-        return view("frontpage.cart", compact('content'));
+        $total = Cart::total();
+        $count = Cart::count();
+        return view("frontpage.cart", compact('content','total','count'));
     }
 
-
+    public function xoasanpham($id)
+    {
+        Cart::remove($id);
+        return redirect()->route('giohang');
+    }
 
 
     /**

@@ -45,10 +45,7 @@ Route::get('/faq', function () {
 Route::get('/contract', function () {
     return view('frontpage.contract');
 });
-//Route cho cart
-Route::get('/cart', function () {
-    return view('frontpage.cart');
-});
+
 //Route get data cho TRANG sản phẩm (trang chủ).
 Route::resource('/', 'ProductController');
 
@@ -62,6 +59,9 @@ Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@ge
 Route::get('mua-hang/{id}', ['as'=>'muahang', 'uses'=>'ProductController@muahang']);
 
 Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
+
+//Route xóa sản phẩm khỏi giỏ hàng.
+Route::get('xoa-san-pham/{id}', ['as'=>'xoasanpham','uses'=>'ProductController@xoasanpham']);
 //Route cho trang đăng nhập.
 
 // Default
