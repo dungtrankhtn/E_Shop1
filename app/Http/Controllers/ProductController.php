@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+
+use Cart;
+
 class ProductController extends Controller
 {
     /**
@@ -33,6 +36,32 @@ class ProductController extends Controller
         $product_type = DB::table('product')->where('type', $type)->get();
         return view("frontpage.product", ['product_type' => $product_type]);
     }
+
+    public function muahang ($id)
+    {
+        //Lấy trông tin sản phẩm ra (theo id).
+        $product_buy =  DB::table('product')->where('id',$id)->first();
+        Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->image)));
+        $content = Cart::content();
+
+        return redirect()->route('giohang');
+    }
+
+    public function giohang()
+    {
+        $content = Cart::content(); 
+        $total = Cart::total();
+        $count = Cart::count();
+        return view("frontpage.cart", compact('content','total','count'));
+    }
+
+    public function xoasanpham($id)
+    {
+        Cart::remove($id);
+        return redirect()->route('giohang');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
