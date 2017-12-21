@@ -81,15 +81,15 @@
 							<div class="share">
 								<p>Share Product :</p>
 								<ul>
-									<li><a href="#"><img src="images/youtube.png" alt=""></a></li>
-									<li><a href="#"><img src="images/facebook.png" alt=""></a></li>
-									<li><a href="#"><img src="images/twitter.png" alt=""></a></li>
-									<li><a href="#"><img src="images/linkedin.png" alt=""></a></li>
+									<li><a href="https://www.youtube.com" target="_blank"><img src="{{asset('images/youtube.png')}}" alt=""></a></li>
+									<li><a href="https://www.facebook.com" target="_blank"><img src="{{asset('images/facebook.png')}}" alt=""></a></li>
+									<li><a href="https://twitter.com" target="_blank"><img src="{{asset('images/twitter.png')}}" alt=""></a></li>
+									<li><a href="https://linkedin.com "target="_blank"><img src="{{asset('images/linkedin.png')}}" alt=""></a></li>
 								</ul>
 							</div>
 							<div class="add-cart">
 								<div class="rating">
-									<p>Rating:<img src="images/rating.png"><span>[3 of 5 Stars]</span></p>
+									<p>Rating:<img src="{{asset('images/rating.png')}}"><span>[3 of 5 Stars]</span></p>
 								</div>
 								<div class="button"><span><a href="#">Add to Cart</a></span></div>
 								<div class="clear"></div>

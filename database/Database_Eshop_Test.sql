@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2017 at 04:10 PM
+-- Generation Time: Dec 11, 2017 at 05:14 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -21,6 +21,63 @@ SET time_zone = "+00:00";
 --
 -- Database: `shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2017_12_11_115619_create_admins_table', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('dungtran6665@gmail.com', '$2y$10$yUIrj1vcOB0QeEu0eyK0z.LxurTfCZ6gkdM8BQ/RyOCCx4N7pK3pO', '2017-12-11 04:47:02');
 
 -- --------------------------------------------------------
 
@@ -44,15 +101,11 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `name`, `price`, `decriptions`, `image`, `type`) VALUES
 (1, 'iPhone 8 Plus 256GB', 28790000, 'Màn hình: 5.5\", Retina HD\nHĐH: iOS 11\nCPU: Apple A11 Bionic 6 nhân\nRAM: 3 GB, ROM: 256 GB\nCamera: 2 camera 12 MP, Selfie: 7 MP\nPIN: Đang cập nhật', 'https://cdn4.tgdd.vn/Products/Images/42/114114/iphone-8-plus-256gb-a-300x300.jpg', 1),
 (2, 'iPhone 8 256GB', 25790000, 'Màn hình: 4.7\", Retina HD\nHĐH: iOS 11\nCPU: Apple A11 Bionic 6 nhân\nRAM: 2 GB, ROM: 256 GB\nCamera: 12 MP, Selfie: 7 MP\nPIN: Đang cập nhật', 'https://cdn2.tgdd.vn/Products/Images/42/114112/iphone-8-256gb-h1-2-300x300.jpg', 1),
-(3, 'iPhone 8 Plus 64GB', 23990000, 'Màn hình: 5.5\", Retina HD\nHĐH: iOS 11\nCPU: Apple A11 Bionic 6 nhân\nRAM: 3 GB, ROM: 64 GB\nCamera: 2 camera 12 MP, Selfie: 7 MP\nPIN: Đang cập nhật', 'https://cdn.tgdd.vn/Products/Images/42/114110/Feature/iphone-8-plus2-400x400.jpg', 1),
 (4, 'iPhone 8 64GB', 20990000, 'Màn hình: 4.7\", Retina HD\nHĐH: iOS 11\nCPU: Apple A11 Bionic 6 nhân\nRAM: 2 GB, ROM: 64 GB\nCamera: 12 MP, Selfie: 7 MP\nPIN: Đang cập nhật', 'https://cdn3.tgdd.vn/Products/Images/42/114113/iphone-8-64gb-h1-1-300x300.jpg', 1),
 (5, 'Samsung Galaxy S8 Plus', 20490000, 'Màn hình: 6.2, Quad HD (2K)\nHĐH: Android 7.0\nCPU: Exynos 8895 8 nhân\nRAM: 4 GB, ROM: 64 GB\nCamera: 12 MP, Selfie: 8 MP\nPIN: 3500 mAh', 'https://cdn1.tgdd.vn/Products/Images/42/91131/samsung-galaxy-s8-plus-20-300x300.jpg', 1),
-(6, 'iPhone 7 Plus 128GB', 22990000, 'Màn hình: 5.5\", Retina HD\nHĐH: iOS 10\nCPU: Apple A10 Fusion 4 nhân\nRAM: 3 GB, ROM: 128 GB\nCamera: 2x12 MP, Selfie: 7 MP\nPIN: 2900 mAh, SIM: 1 SIM', 'https://cdn4.tgdd.vn/Products/Images/42/87839/Feature/iphone-7-plus-128gb-600-277-2-1-400x400.jpg', 1),
-(7, 'Samsung Galaxy Note 8', 22490000, 'Màn hình: 6.3\", Quad HD (2K)\nHĐH: Android 7.1\nCPU: Exynos 8895 8 nhân\nRAM: 6 GB, ROM: 64 GB\nCamera: 2 camera 12 MP, Selfie: 8 MP\nPIN: 3300 mAh', 'https://cdn1.tgdd.vn/Products/Images/42/106211/Feature/samsung-galaxy-note8-3-400x400.jpg', 1),
 (8, 'iPhone 7 256GB', 19990000, 'Màn hình: 4.7\", Retina HD\nHĐH: iOS 10\nCPU: Apple A10 Fusion 4 nhân\nRAM: 2 GB, ROM: 256 GB\nCamera: 12 MP, Selfie: 7 MP\nPIN: 1960 mAh, SIM: 1 SIM\n', 'https://cdn3.tgdd.vn/Products/Images/42/87838/iphone-7-256gb-12-300x300.jpg', 1),
 (9, 'Samsung Galaxy S8', 18490000, 'Màn hình: 5.8\", Quad HD (2K)\nHĐH: Android 7.0\nCPU: Exynos 8895 8 nhân\nRAM: 4 GB, ROM: 64 GB\nCamera: 12 MP, Selfie: 8 MP\nPIN: 3000 mAh', 'https://cdn4.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg', 1),
 (10, 'Sony Xperia XZ Premium', 17990000, 'Màn hình: 5.5\", 4K\nHĐH: Android 7.0\nCPU: Snapdragon 835 8 nhân\nRAM: 4 GB, ROM: 64 GB\nCamera: 19 MP, Selfie: 13 MP\nPIN: 3230 mAh', 'https://cdn4.tgdd.vn/Products/Images/42/92069/sony-xperia-xz-premium-12-300x300.jpg', 1),
-(11, 'iPhone 7 128GB', 18990000, 'Màn hình: 4.7\", Retina HD\nHĐH: iOS 10\nCPU: Apple A10 Fusion 4 nhân\nRAM: 2 GB, ROM: 128 GB\nCamera: 12 MP, Selfie: 7 MP\nPIN: 1900 mAh, SIM: 1 SIM', 'https://cdn2.tgdd.vn/Products/Images/42/87837/Feature/iphone-7-128gb-600-277-1-400x400.png', 1),
 (12, 'Sony Xperia XZ Premium Pink Gold', 16490000, 'Màn hình: 5.5\", Ultra HD (4K)\nHĐH: Android 7.1\nCPU: Qualcomm Snapdragon 835 8 nhân 64-bit\nRAM: 4 GB, ROM: 64 GB\nCamera: 19 MP, Selfie: 13 MP\nPIN: 3230 mAh', 'https://cdn1.tgdd.vn/Products/Images/42/113126/sony-xperia-xz-premium-pink-gold-300x300.jpg', 1),
 (13, 'HTC U11', 16990000, 'Màn hình: 5.5\", Quad HD\nHĐH: Android 7.1\nCPU: Snapdragon 835, 8 nhân\nRAM: 6GB; ROM: 128GB\nCamera: 12MP, Selfie: 16MP\nPIN: 3000 mAh, SIM: 2 SIM', 'https://cdn1.tgdd.vn/Products/Images/42/103241/Feature/htc-u11-ft-t11-400x400.jpg', 1),
 (14, 'HTC U Ultra Sapphire', 16490000, 'Màn hình: 5.7\", Quad HD (2K)\nHĐH: Android 7.0\nCPU: Qualcomm Snapdragon 821 4 nhân\nRAM: 4 GB, ROM: 128 GB\nCamera: 12 MP, Selfie: 16 MP\nPIN: 3000 mAh', 'https://cdn1.tgdd.vn/Products/Images/42/98826/htc-u-ultra-sapphire-300-300x300.jpg', 1),
@@ -140,11 +193,117 @@ INSERT INTO `product` (`id`, `name`, `price`, `decriptions`, `image`, `type`) VA
 (96, 'Mobell Nova P2', 1881000, 'Màn hình: 5.5\", HD\nHĐH: Android 5.1 (Lollipop)\nCPU: MT6580 4 nhân\nRAM: 2 GB, ROM: 16 GB\nCamera: 8 MP, Selfie: 5 MP\nPIN: 4000 mAh, SIM: 2 SIM', 'https://cdn.tgdd.vn/Products/Images/42/75365/mobell-nova-p2-300a-300x300.jpg', 1),
 (97, 'Itel P51', 2090000, 'Màn hình: 5.5\", HD\nHĐH: Android 6.0 \nCPU: Mediatek MT6580 4 nhân\nRAM: 1 GB, ROM: 16 GB\nCamera: 8 MP, Selfie: 2 MP\nPIN: 5000 mAh, 2 SIM', 'https://cdn2.tgdd.vn/Products/Images/42/138842/itel-p51-300-300x300.jpg', 1),
 (98, 'Mobiistar Lai Zumbo S Lite (2017)', 1990000, 'Màn hình: 5.5\", HD\nHĐH: Android 7.0 (Nougat)\nCPU: MTK MT6737 4 nhân\nRAM: 1 GB, ROM: 8 GB\nCamera: 8 MP, Selfie: 5 MP\nPIN: 4000 mAh, SIM: 2 SIM', 'https://cdn1.tgdd.vn/Products/Images/42/112776/mobiistar-zumbo-s-lite-2017-300-300x300.jpg', 1),
-(99, 'Mobell Nova i7', 1791000, 'Màn hình: 5\", HD\nHĐH: Android 6.0 (Marshmallow)\nCPU: MT6580 4 nhân\nRAM: 2 GB, ROM: 16 GB\nCamera: 8 MP, Selfie: 5 MP\nPIN: 2300 mAh, SIM: 2 SIM', 'https://cdn4.tgdd.vn/Products/Images/42/87359/mobell-nova-i7-12-300x300.jpg', 1);
+(99, 'Mobell Nova i7', 1791000, 'Màn hình: 5\", HD\nHĐH: Android 6.0 (Marshmallow)\nCPU: MT6580 4 nhân\nRAM: 2 GB, ROM: 16 GB\nCamera: 8 MP, Selfie: 5 MP\nPIN: 2300 mAh, SIM: 2 SIM', 'https://cdn4.tgdd.vn/Products/Images/42/87359/mobell-nova-i7-12-300x300.jpg', 1),
+(100, 'name', 0, 'decriptions', 'image', 0),
+(101, 'Acer Aspire ES1 432 C5J2 N3350 (NX.GFSSV.004)', 6290, 'Màn hình: 14 inch, HD\nCPU: Celeron, 1.1GHz\nRAM: 2GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 1.92 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/101830/acer-aspire-es1-432-c5j2-n3350-2gb-500gb-win10-den-450x300-450x300.png', 2),
+(102, 'Asus X441NA N3350 (GA017T)', 6490, 'Màn hình: 14 inch, HD\nCPU: Celeron N3350, 1.10 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/135174/asus-x441na-n3350-ga017t-dai-dien-10000-450x300.jpg', 2),
+(103, 'Lenovo IdeaPad 110 15IBR N3710 (80T700BKVN)', 6990, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.6GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics\nHĐH: Windows 10 Home\nPin: 3 cell/ DVD: Không', 'https://cdn3.tgdd.vn/Products/Images/44/85983/lenovo-ideapad-110-15ibr-80t700bkvn-den-h-450x300-450x300.jpg', 2),
+(104, 'Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 7490, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.1GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphic\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn1.tgdd.vn/Products/Images/44/120276/Feature/acer-es1-533-p6l2-n4200-nxgftsv00.png', 2),
+(105, 'HP 15 bs578TU N3710 (2LR89PA)', 7690, 'Màn hình: 15.6 inch, HD\nCPU: Pentium N3710, 1.6GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics 405\nHĐH: Windows 10, DVD: Không\nNặng 1.86 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/111360/hp-15-bs578tu-n3710-den-450x300-450x300.jpg', 2),
+(106, 'Asus X441NA N4200 (GA070T)', 7690, 'Màn hình: 14 inch, HD\nCPU: Pentium, 1.1 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/101829/asus-x441na-n4200-450x300.jpg', 2),
+(107, 'Lenovo Ideapad 320 14ISK i3 6006U (80XG007SVN)', 9690, 'Màn hình: 14 inch, FHD\nCPU: i3-6006U, 2.0GHz\nRAM: 4 GB, Ổ cứng HDD 1TB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 2.15 kg, PIN 2 cell', 'https://cdn.tgdd.vn/Products/Images/44/139355/lenovo-ideapad-320-14isk-i3-6006u-80xg007svn-dai-dien-450x300.jpg', 2),
+(108, 'Asus TP203NAH N4200 (BP052T)', 9990, 'Màn hình: 11.6 inch, HD\nCPU: Pentium, 1.1GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng1.1 kg, PIN 2 cell', 'https://cdn1.tgdd.vn/Products/Images/44/113871/Feature/asus-tp203nah-n4200-bp052t.png', 2),
+(109, 'Acer Aspire E5 475 33WT i3 6006U (NX.GCUSV.002)', 9790, 'Màn hình: 14\", 1366x768\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel® HD Graphics 520\nHĐH: Windows 10 Home\nPin: 4 cell/ DVD: Không', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(110, 'Asus A441UA i3 6006U (WX156T)', 9990, 'Màn hình: 14 inch, HD\nCPU: Core i3 Skylake, 2.00 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics 520\nHĐH: Windows 10, Không DVD\nNặng 1.75 kg, PIN 3 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(111, 'Acer Aspire A315 51 31X0 i3 6006U (NX.GNPSV.016)', 10290, 'Màn hình: 15.6\", FHD\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics 520\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn2.tgdd.vn/Products/Images/44/111132/Feature/acer-aspire-a315-51-31x0-i3-6006ucopy.jpg', 2),
+(112, 'HP 15 bs571TU i3 6006U (2JQ68PA)', 10490, 'Màn hình: 15.6 inch, HD\nCPU: Core i3 Skylake, 2.0GHz\nRAM: 4GB, Ổ cứng HDD: 1TB\nĐồ họa: Intel HD Graphics 520\nHĐH: Windows 10, DVD:\nNặng 1.86 kg, PIN 4 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(113, 'Lenovo IdeaPad 320 15IKBN i3 7130U (80XL03SNVN)', 10490, 'Màn hình: 15.6 inch, FHD\nCPU: i3-7130U, 2.7GHz\nRAM: 4GB, Ổ cứng: SSD 128GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.9 kg, PIN 2 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(114, 'HP 15 bs572TU i3 6006U (2JQ69PA)', 10990, 'Màn hình: 15.6 inch, FHD\nCPU: Core i3 Skylake, 2.0GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics 520\nHĐH: Windows 10, DVD:\nNặng 1.86 kg, PIN 4 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(115, 'Lenovo IdeaPad 120S 11IAP N3350 (81A40072VN)', 5190, 'Màn hình: 11.6 inch, HD\nCPU: Celeron, 1.1GHz\nRAM: 2GB, Ổ cứng eMMC: 32GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.27 kg, PIN 2 cell', 'https://cdn3.tgdd.vn/Products/Images/44/113133/lenovo-ideapad-120s-11iap-450x300-1-450x300.jpg', 2),
+(116, 'Acer Aspire ES1 432 C5J2 N3350 (NX.GFSSV.004)', 6290, 'Màn hình: 14 inch, HD\nCPU: Celeron, 1.1GHz\nRAM: 2GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 1.92 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/101830/acer-aspire-es1-432-c5j2-n3350-2gb-500gb-win10-den-450x300-450x300.png', 2),
+(117, 'Asus X441NA N3350 (GA017T)', 6490, 'Màn hình: 14 inch, HD\nCPU: Celeron N3350, 1.10 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/135174/asus-x441na-n3350-ga017t-dai-dien-10000-450x300.jpg', 2),
+(118, 'Lenovo IdeaPad 110 15IBR N3710 (80T700BKVN)', 6990, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.6GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics\nHĐH: Windows 10 Home\nPin: 3 cell/ DVD: Không', 'https://cdn3.tgdd.vn/Products/Images/44/85983/lenovo-ideapad-110-15ibr-80t700bkvn-den-h-450x300-450x300.jpg', 2),
+(119, 'Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 7490, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.1GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphic\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn1.tgdd.vn/Products/Images/44/120276/Feature/acer-es1-533-p6l2-n4200-nxgftsv00.png', 2),
+(120, 'HP 15 bs578TU N3710 (2LR89PA)', 7690, 'Màn hình: 15.6 inch, HD\nCPU: Pentium N3710, 1.6GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics 405\nHĐH: Windows 10, DVD: Không\nNặng 1.86 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/111360/hp-15-bs578tu-n3710-den-450x300-450x300.jpg', 2),
+(121, 'Asus X441NA N4200 (GA070T)', 7690, 'Màn hình: 14 inch, HD\nCPU: Pentium, 1.1 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/101829/asus-x441na-n4200-450x300.jpg', 2),
+(122, 'Lenovo Ideapad 320 14ISK i3 6006U (80XG007SVN)', 9690, 'Màn hình: 14 inch, FHD\nCPU: i3-6006U, 2.0GHz\nRAM: 4 GB, Ổ cứng HDD 1TB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 2.15 kg, PIN 2 cell', 'https://cdn.tgdd.vn/Products/Images/44/139355/lenovo-ideapad-320-14isk-i3-6006u-80xg007svn-dai-dien-450x300.jpg', 2),
+(123, 'Asus TP203NAH N4200 (BP052T)', 9990, 'Màn hình: 11.6 inch, HD\nCPU: Pentium, 1.1GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng1.1 kg, PIN 2 cell', 'https://cdn1.tgdd.vn/Products/Images/44/113871/Feature/asus-tp203nah-n4200-bp052t.png', 2),
+(124, 'Acer Aspire E5 475 33WT i3 6006U (NX.GCUSV.002)', 9790, 'Màn hình: 14\", 1366x768\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel® HD Graphics 520\nHĐH: Windows 10 Home\nPin: 4 cell/ DVD: Không', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(125, 'Asus A441UA i3 6006U (WX156T)', 9990, 'Màn hình: 14 inch, HD\nCPU: Core i3 Skylake, 2.00 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics 520\nHĐH: Windows 10, Không DVD\nNặng 1.75 kg, PIN 3 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(126, 'Acer Aspire A315 51 31X0 i3 6006U (NX.GNPSV.016)', 10290, 'Màn hình: 15.6\", FHD\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics 520\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn2.tgdd.vn/Products/Images/44/111132/Feature/acer-aspire-a315-51-31x0-i3-6006ucopy.jpg', 2),
+(127, 'HP 15 bs571TU i3 6006U (2JQ68PA)', 10490, 'Màn hình: 15.6 inch, HD\nCPU: Core i3 Skylake, 2.0GHz\nRAM: 4GB, Ổ cứng HDD: 1TB\nĐồ họa: Intel HD Graphics 520\nHĐH: Windows 10, DVD:\nNặng 1.86 kg, PIN 4 cell', 'https://cdn4.tgdd.vn/Products/Images/44/111129/hp-15-bs571tu-i3-6006u-2jq68pa-den-dai-dien-450x300.jpg', 2),
+(128, 'Lenovo IdeaPad 320 15IKBN i3 7130U (80XL03SNVN)', 10490, 'Màn hình: 15.6 inch, FHD\nCPU: i3-7130U, 2.7GHz\nRAM: 4GB, Ổ cứng: SSD 128GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.9 kg, PIN 2 cell', 'https://cdn4.tgdd.vn/Products/Images/44/139349/lenovo-ideapad-320-15ikbn-i3-7130u-80xl03snvn-dai-dien-450x300.jpg', 2),
+(129, 'HP 15 bs572TU i3 6006U (2JQ69PA)', 10990, 'Màn hình: 15.6 inch, FHD\nCPU: Core i3 Skylake, 2.0GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics 520\nHĐH: Windows 10, DVD:\nNặng 1.86 kg, PIN 4 cell', 'https://cdn1.tgdd.vn/Products/Images/44/111131/hp-15-bs572tu-i3-6006u-2jq69pa-450x300-450x300.jpg', 2),
+(130, 'Lenovo IdeaPad 120S 11IAP N3350 (81A40072VN)', 5190, 'Màn hình: 11.6 inch, HD\nCPU: Celeron, 1.1GHz\nRAM: 2GB, Ổ cứng eMMC: 32GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.27 kg, PIN 2 cell', 'https://cdn3.tgdd.vn/Products/Images/44/113133/lenovo-ideapad-120s-11iap-450x300-1-450x300.jpg', 2),
+(131, 'Acer Aspire ES1 432 C5J2 N3350 (NX.GFSSV.004)', 6290, 'Màn hình: 14 inch, HD\nCPU: Celeron, 1.1GHz\nRAM: 2GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 1.92 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/101830/acer-aspire-es1-432-c5j2-n3350-2gb-500gb-win10-den-450x300-450x300.png', 2),
+(132, 'Asus X441NA N3350 (GA017T)', 6490, 'Màn hình: 14 inch, HD\nCPU: Celeron N3350, 1.10 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/135174/asus-x441na-n3350-ga017t-dai-dien-10000-450x300.jpg', 2),
+(133, 'Lenovo IdeaPad 110 15IBR N3710 (80T700BKVN)', 6990, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.6GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics\nHĐH: Windows 10 Home\nPin: 3 cell/ DVD: Không', 'https://cdn3.tgdd.vn/Products/Images/44/85983/lenovo-ideapad-110-15ibr-80t700bkvn-den-h-450x300-450x300.jpg', 2),
+(134, 'Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 7490, 'Màn hình: 15.6\", 1366x768\nCPU: Intel Pentium, 1.1GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphic\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn1.tgdd.vn/Products/Images/44/120276/Feature/acer-es1-533-p6l2-n4200-nxgftsv00.png', 2),
+(135, 'HP 15 bs578TU N3710 (2LR89PA)', 7690, 'Màn hình: 15.6 inch, HD\nCPU: Pentium N3710, 1.6GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel HD Graphics 405\nHĐH: Windows 10, DVD: Không\nNặng 1.86 kg, PIN 4 cell', 'https://cdn.tgdd.vn/Products/Images/44/111360/hp-15-bs578tu-n3710-den-450x300-450x300.jpg', 2),
+(136, 'Asus X441NA N4200 (GA070T)', 7690, 'Màn hình: 14 inch, HD\nCPU: Pentium, 1.1 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.7 kg, PIN 3 cell', 'https://cdn4.tgdd.vn/Products/Images/44/101829/asus-x441na-n4200-450x300.jpg', 2),
+(137, 'Lenovo Ideapad 320 14ISK i3 6006U (80XG007SVN)', 9690, 'Màn hình: 14 inch, FHD\nCPU: i3-6006U, 2.0GHz\nRAM: 4 GB, Ổ cứng HDD 1TB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, Không DVD\nNặng 2.15 kg, PIN 2 cell', 'https://cdn.tgdd.vn/Products/Images/44/139355/lenovo-ideapad-320-14isk-i3-6006u-80xg007svn-dai-dien-450x300.jpg', 2),
+(138, 'Asus TP203NAH N4200 (BP052T)', 9990, 'Màn hình: 11.6 inch, HD\nCPU: Pentium, 1.1GHz\nRAM: 4GB, Ổ cứng HDD: 500GB\nĐồ họa: Intel® HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng1.1 kg, PIN 2 cell', 'https://cdn1.tgdd.vn/Products/Images/44/113871/Feature/asus-tp203nah-n4200-bp052t.png', 2),
+(139, 'Acer Aspire E5 475 33WT i3 6006U (NX.GCUSV.002)', 9790, 'Màn hình: 14\", 1366x768\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel® HD Graphics 520\nHĐH: Windows 10 Home\nPin: 4 cell/ DVD: Không', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(140, 'Asus A441UA i3 6006U (WX156T)', 9990, 'Màn hình: 14 inch, HD\nCPU: Core i3 Skylake, 2.00 GHz\nRAM: 4 GB, Ổ cứng HDD: 500 GB\nĐồ họa: Intel® HD Graphics 520\nHĐH: Windows 10, Không DVD\nNặng 1.75 kg, PIN 3 cell', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEX6+vqsEtnpAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==', 2),
+(141, 'Acer Aspire A315 51 31X0 i3 6006U (NX.GNPSV.016)', 10290, 'Màn hình: 15.6\", FHD\nCPU: Intel Core i3, 2.0GHz\nRAM: 4GB/ HDD: 500GB\nVGA: Intel HD Graphics 520\nHĐH: Windows 10 Home\nPin: 2 cell/ DVD: Không', 'https://cdn2.tgdd.vn/Products/Images/44/111132/Feature/acer-aspire-a315-51-31x0-i3-6006ucopy.jpg', 2),
+(142, 'HP 15 bs571TU i3 6006U (2JQ68PA)', 10490, 'Màn hình: 15.6 inch, HD\nCPU: Core i3 Skylake, 2.0GHz\nRAM: 4GB, Ổ cứng HDD: 1TB\nĐồ họa: Intel HD Graphics 520\nHĐH: Windows 10, DVD:\nNặng 1.86 kg, PIN 4 cell', 'https://cdn4.tgdd.vn/Products/Images/44/111129/hp-15-bs571tu-i3-6006u-2jq68pa-den-dai-dien-450x300.jpg', 2),
+(143, 'Lenovo IdeaPad 320 15IKBN i3 7130U (80XL03SNVN)', 10490, 'Màn hình: 15.6 inch, FHD\nCPU: i3-7130U, 2.7GHz\nRAM: 4GB, Ổ cứng: SSD 128GB\nĐồ họa: Intel HD Graphics\nHĐH: Windows 10, DVD: Không\nNặng 1.9 kg, PIN 2 cell', 'https://cdn4.tgdd.vn/Products/Images/44/139349/lenovo-ideapad-320-15ikbn-i3-7130u-80xl03snvn-dai-dien-450x300.jpg', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_type`
+--
+
+CREATE TABLE `product_type` (
+  `type_id` int(11) NOT NULL,
+  `type_name` varchar(50) NOT NULL,
+  `image` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_type`
+--
+
+INSERT INTO `product_type` (`type_id`, `type_name`, `image`) VALUES
+(1, 'Điện Thoại Di Động', 'http://www.freeiconspng.com/uploads/mobile-phone-cell-icon-25.png'),
+(2, 'Lap Top', 'http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/512/Laptop-icon.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'member1', 'dungtran6665@gmail.com', '$2y$10$oNMpyZ0TFR5FVs9lF7dwJezIB6gz.yGwaEc9Nw8DR3TEtoUYRxMRq', 'W4qXVSU7XQGK3uVWmrbUpJL45JoVRnOfyysArICteut5QPpvebGfcVTpM8Mg', '2017-12-11 04:42:11', '2017-12-11 04:42:11');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_email_unique` (`email`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indexes for table `product`
@@ -153,14 +312,51 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_type`
+--
+ALTER TABLE `product_type`
+  ADD PRIMARY KEY (`type_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+
+--
+-- AUTO_INCREMENT for table `product_type`
+--
+ALTER TABLE `product_type`
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

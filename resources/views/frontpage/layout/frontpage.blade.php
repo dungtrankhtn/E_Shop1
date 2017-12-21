@@ -4,12 +4,12 @@
     <title>Free Smart Store Website Template | Home :: w3layouts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="../../../../css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../../../css/menu.css" rel="stylesheet" type="text/css" media="all"/>
-    <script src="../../../../js/jquery.min.js"></script>
-    <script src="../../../../js/script.js" type="text/javascript"></script>
-    <script type="../../../../text/javascript" src="js/move-top.js"></script>
-    <script type="../../../../text/javascript" src="js/easing.js"></script>
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{asset('css/menu.css')}}" rel="stylesheet" type="text/css" media="all"/>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('js/move-top.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/easing.js')}}"></script>
     <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 </head>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="shopping_cart">
                     <div class="cart">
-                        <a href="#" title="View my shopping cart" rel="nofollow">
+                        <a href="{{ url('/cart') }}" title="View my shopping cart" rel="nofollow">
                             <strong class="opencart"> </strong>
                             <span class="cart_title">Cart</span>
                             <span class="no_product">(empty)</span>
@@ -172,13 +172,13 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="{{ url('../about') }}">Giới thiệu</a></li>
-                    <li><a href="{{ url('../faq') }}">Faqs</a></li>
-                    <li><a href="{{ url('../contract') }}">Liên hệ</a></li>
+                    <li><a href="{{ url('/about') }}">Giới thiệu</a></li>
+                    <li><a href="{{ url('/faq') }}">Faqs</a></li>
+                    <li><a href="{{ url('/contract') }}">Liên hệ</a></li>
                     <div class="clear"> </div>
                 </ul>
             </nav>
-            <script src="js/menu.js" type="text/javascript"></script>
+            <script src="{{asset('js/menu.js')}}" type="text/javascript"></script>
         </div>
     </div>
     @yield('content')
@@ -255,8 +255,8 @@
     });
 </script>
 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-<link href="css/flexslider.css" rel='stylesheet' type='text/css' />
-<script defer src="js/jquery.flexslider.js"></script>
+<link href="{{asset('css/flexslider.css')}}" rel='stylesheet' type='text/css' />
+<script defer src="{{asset('js/jquery.flexslider.js')}}"></script>
 <script type="text/javascript">
     $(function(){
         SyntaxHighlighter.all();
