@@ -80,8 +80,6 @@ Route::prefix('admin')->group(function () {
           return view('admin.maps');
       });
 
-
-
 //Route cho trang đăng nhập.
 
 
