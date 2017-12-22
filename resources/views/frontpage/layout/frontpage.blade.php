@@ -27,7 +27,6 @@
                         <input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
                     </form>
                 </div>
-<<<<<<< HEAD
                 <div class="shopping_cart">
                     <div class="cart">
                         <a href="{{ url('/cart') }}" title="View my shopping cart" rel="nofollow">
@@ -35,16 +34,8 @@
                             <span class="cart_title">Cart</span>
                             <span class="no_product">(empty)</span>
                         </a>
-=======
-                <a href="{{ url('/gio-hang') }}" title="View my shopping cart" rel="nofollow">
-                    <div class="shopping_cart">
-                        <div class="cart">
-                                <strong class="opencart"> </strong>
-                                <span class="cart_title">Cart</span>
-                        </div>
->>>>>>> 06042b3d734d8274f94311618aaa489c7fb166e6
                     </div>
-                </a>
+                </div>
                 <div class="languages" title="language">
                     <div id="language" class="wrapper-dropdown" tabindex="1">EN
                         <strong class="opencart"> </strong>

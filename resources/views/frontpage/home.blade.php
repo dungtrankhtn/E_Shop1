@@ -134,11 +134,7 @@
                         <h2>{{ $product->name }}</h2>
                         <p>{{$product->decriptions}}</p>
                         <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
-                        <div class="button">
-                        <span>
-                            <img src="images/cart.jpg" alt="" />
-                            <a href="{!!url('mua-hang',[$product->id])!!}" class="cart-button">Add to Cart</a>
-                        </span> </div>
+                        <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="{!!url('preview',[$product->id])!!}" class="cart-button">Add to Cart</a></span> </div>
                         <div class="button"><span><a href="{!!url('preview',[$product->id])!!}" class="details">Details</a></span></div>
                     </div>
                     @endforeach
