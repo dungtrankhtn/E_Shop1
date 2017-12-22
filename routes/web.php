@@ -54,6 +54,9 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 //Route get data theo loại sản phẩm (type).
 Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
 
+//
+Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
+
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {
           return view('admin.dashboard');
@@ -76,6 +79,10 @@ Route::prefix('admin')->group(function () {
       Route::get('/maps', function () {
           return view('admin.maps');
       });
+
+
+
+//Route cho trang đăng nhập.
 
 
       Route::get('/charts', function () {
