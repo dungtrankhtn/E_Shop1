@@ -34,7 +34,6 @@ class ProductController extends Controller
         return view("frontpage.product", ['product_type' => $product_type]);
     }
 
-
     public function muahang ($id)
     {
         //Lấy trông tin sản phẩm ra (theo id).
@@ -50,7 +49,6 @@ class ProductController extends Controller
         $content = Cart::content(); 
         return view("frontpage.cart", compact('content'));
     }
-
 
     /**
      * Show the form for creating a new resource.

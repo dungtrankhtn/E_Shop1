@@ -54,7 +54,6 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 //Route get data theo loại sản phẩm (type).
 Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
 
-//
 Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
 
 Route::prefix('admin')->group(function () {
@@ -112,10 +111,9 @@ Route::prefix('admin')->group(function () {
 });
 
 
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/price', function () {
+    return view('adminpage.price');});

@@ -72,15 +72,15 @@
                                     </thead>
                                     <tbody>
                                     	@foreach ($content as $item)
-	
+
                                         <tr>
-                                            
+
                                             <td><a href="#">{!! $item->name !!}</a>
                                             </td>
                                             <td>
                                                 <input type="number" value="{!! $item->qty !!}" class="form-control">
                                             </td>
-                                            
+
                                             <td>{!! $item->price !!}</td>
                                             <td>{!! $item->qty !!}</td>
                                             <td>$246.00</td>
@@ -114,7 +114,7 @@
                         </form>
 
                     </div>
-                    
+
                 </div>
                 <!-- /.col-md-9 -->
 
@@ -181,7 +181,7 @@
 
     </div>
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
