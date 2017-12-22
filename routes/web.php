@@ -54,7 +54,12 @@ Route::get('preview/{id}', ['as'=>'preview','uses'=>'ProductController@preview']
 //Route get data theo loại sản phẩm (type).
 Route::get('product-type/{type}', ['as'=>'product','uses'=>'ProductController@get_product_by_type']);
 
+Route::get('mua-hang/{id}', ['as'=>'muahang', 'uses'=>'ProductController@muahang']);
+
 Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
+
+//Route xóa sản phẩm khỏi giỏ hàng.
+Route::get('xoa-san-pham/{id}', ['as'=>'xoasanpham','uses'=>'ProductController@xoasanpham']);
 
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {

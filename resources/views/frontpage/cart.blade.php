@@ -1,4 +1,5 @@
-
+@extends('frontpage.layout.frontpage')
+@section('content')
 <section>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,19 +23,19 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="/../../../css/font-awesome.css" rel="stylesheet">
-    <link href="/../../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="/../../../css/animate.min.css" rel="stylesheet">
-    <link href="/../../../css/owl.carousel.css" rel="stylesheet">
-    <link href="/../../../css/owl.theme.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/animate.min.css" rel="stylesheet">
+    <link href="../../../css/owl.carousel.css" rel="stylesheet">
+    <link href="../../../css/owl.theme.css" rel="stylesheet">
 
     <!-- theme stylesheet -->
-    <link href="/../../../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="../../../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="/../../../css/custom.css" rel="stylesheet">
+    <link href="../../../css/custom.css" rel="stylesheet">
 
-    <script src="/../../../js/respond.min.js"></script>
+    <script src="../../../js/respond.min.js"></script>
 
     <link rel="shortcut icon" href="#">
 
@@ -58,41 +59,42 @@
                         <form method="post" action="checkout1.html">
 
                             <h1>Shopping cart</h1>
-                            <p class="text-muted">You currently have 3 item(s) in your cart.</p>
+                            <p class="text-muted">You currently have {!! $count !!} item(s) in your cart.</p>
                             <div class="table-responsive">
                                 <table class="table" style="width: 100%;">
                                     <thead>
                                         <tr>
-                                            <th style="text-align: left; color: blue;"><b>Product</b></th>
-                                            <th style="text-align: left; color: blue"><b>Quantity</b></th>
-                                            <th style="text-align: left; color: blue"><b>Unit price</b></th>
-                                            <th style="text-align: left; color: blue"><b>Discount</b></th>
-                                            <th style="text-align: left; color: blue" colspan="2"><b>Total</b></th>
+                                            <th style="text-align: left; color: blue;"><h3>Product</h3></th>
+                                            <th style="text-align: left; color: blue"><h3>Quantity</h3></th>
+                                            <th style="text-align: left; color: blue"><h3>Unit price</h3></th>
+                                            <th style="text-align: left; color: blue"><h3>Discount</h3></th>
+                                            <th style="text-align: left; color: blue"><h3>Total</h3></th>
+                                            <th style="text-align: left; color: blue" colspan="2"><h3>Remove</h3></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     	@foreach ($content as $item)
-
+	
                                         <tr>
-
-                                            <td><a href="#">{!! $item->name !!}</a>
+                                            
+                                            <td><a href="#"><img src="{!! asset('$item->options->img') !!}" alt=}"></a>
                                             </td>
                                             <td>
                                                 <input type="number" value="{!! $item->qty !!}" class="form-control">
                                             </td>
-
-                                            <td>{!! $item->price !!}</td>
+                                            
+                                            <td>{!! number_format($item->price,0,",",".") !!}</td>
                                             <td>{!! $item->qty !!}</td>
-                                            <td>$246.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                            <td><h4>{!! number_format($item->price*$item->qty,0,",",".") !!}</h4></td>
+                                            <td><a href="{{!! url('xoa-san-pham',['id'=>$item->rowId]) !!}}"><img src="../../../images/trash.png" alt=""></a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th colspan="5">Total</th>
-                                            <th colspan="2">$446.00</th>
+                                            <th colspan="2"><h3>Total</h3></th>
+                                            <th colspan="6"><h3>{!! $total !!}</h3></th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -114,74 +116,17 @@
                         </form>
 
                     </div>
-
+                    
                 </div>
                 <!-- /.col-md-9 -->
-
-                <div class="col-md-3">
-                    <div class="box" id="order-summary">
-                        <div class="box-header">
-                            <h3>Order summary</h3>
-                        </div>
-                        <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
-
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>Order subtotal</td>
-                                        <th>$446.00</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$10.00</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Tax</td>
-                                        <th>$0.00</th>
-                                    </tr>
-                                    <tr class="total">
-                                        <td>Total</td>
-                                        <th>$456.00</th>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-
-
-                    <div class="box">
-                        <div class="box-header">
-                            <h4>Coupon code</h4>
-                        </div>
-                        <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
-                        <form>
-                            <div class="input-group">
-
-                                <input type="text" class="form-control">
-
-                                <span class="input-group-btn">
-
-					<button class="btn btn-primary" type="button"><i class="fa fa-gift"></i></button>
-
-				    </span>
-                            </div>
-                            <!-- /input-group -->
-                        </form>
-                    </div>
-
-                </div>
-                <!-- /.col-md-3 -->
-
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
 
-    </div>
 
 
+    
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -197,4 +142,7 @@
 
 
 </body>
+
 </html>
+</section>
+@endsection
