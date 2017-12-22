@@ -28,17 +28,17 @@
             <div class="section group">
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview.html"> <img src="https://cdn4.tgdd.vn/Products/Images/44/88629/apple-macbook-pro-15-mlh32sa-h-300x300.jpg" alt="" /></a>
+                        <a href="{{url('/preview/100')}}"> <img src="https://cdn4.tgdd.vn/Products/Images/44/88629/apple-macbook-pro-15-mlh32sa-h-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
                         <h2>Macbook Pro</h2>
                         <p>Đẳng cấp Sang trọng</p>
-                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
+                        <div class="button"><span><a href="{{url('/preview/100')}}">Add to cart</a></span></div>
                     </div>
                 </div>
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview-6.html"><img src="images/pic1.png" alt="" /></a>
+                        <a href="{{url('/preview/101')}}"><img src="{{asset('images/pic1.png')}}" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
                         <h2>Canon</h2>
@@ -134,7 +134,7 @@
                         <h2>{{ $product->name }}</h2>
                         <p>{{$product->decriptions}}</p>
                         <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
-                        <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="{!!url('preview',[$product->id])!!}" class="cart-button">Add to Cart</a></span> </div>
+                        <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="{!!url('preview',[$product->id])!!}" class="cart-button">Add to Cart</a></span> </div>
                         <div class="button"><span><a href="{!!url('preview',[$product->id])!!}" class="details">Details</a></span></div>
                     </div>
                     @endforeach
@@ -180,7 +180,7 @@
             </div>
             <div class="section group">
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-3.html"><img src="images/new-pic1.jpg" alt="" /></a>
+                    <a href="preview-3.html"><img src="{{asset('images/new-pic1.jpg')}}" alt="" /></a>
                     <div class="discount">
                         <span class="percentage">40%</span>
                     </div>
@@ -190,33 +190,33 @@
                     <div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-4.html"><img src="images/new-pic2.jpg" alt="" /></a>
+                    <a href="preview-4.html"><img src="{{asset('images/new-pic2.jpg')}}" alt="" /></a>
                     <div class="discount">
                         <span class="percentage">22%</span>
                     </div>
                     <h2>Lorem Ipsum is simply </h2>
                     <p><span class="strike">$667.22</span><span class="price">$621.75</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-4.html" class="cart-button">Add to Cart</a></span></div>
+                    <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-4.html" class="cart-button">Add to Cart</a></span></div>
                     <div class="button"><span><a href="preview-4.html" class="details">Details</a></span></div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-2.html"><img src="images/feature-pic2.jpg" alt="" /></a>
+                    <a href="preview-2.html"><img src="{{asset('images/feature-pic2.jpg')}}" alt="" /></a>
                     <div class="discount">
                         <span class="percentage">55%</span>
                     </div>
                     <h2>Lorem Ipsum is simply </h2>
                     <p><span class="strike">$457.22</span><span class="price">$428.02</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
+                    <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
                     <div class="button"><span><a href="preview-2.html" class="details">Details</a></span></div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-2.html"> <img src="images/new-pic3.jpg" alt="" /></a>
+                    <a href="preview-2.html"> <img src="{{asset('images/new-pic3.jpg')}}" alt="" /></a>
                     <div class="discount">
                         <span class="percentage">66%</span>
                     </div>
                     <h2>Lorem Ipsum is simply </h2>
                     <p><span class="strike">$643.22</span><span class="price">$457.88</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
+                    <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
                     <div class="button"><span><a href="#" class="details">Details</a></span></div>
                 </div>
             </div>
