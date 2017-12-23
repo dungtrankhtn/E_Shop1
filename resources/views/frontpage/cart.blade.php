@@ -77,7 +77,7 @@
 	
                                         <tr>
                                             
-                                            <td><a href="#"><img src="{!! asset('$item->options->img') !!}" alt=}"></a>
+                                            <td><a href="#"><img src="{!! asset($item->options['img']) !!}" alt=}"></a>
                                             </td>
                                             <td>
                                                 <input type="number" value="{!! $item->qty !!}" class="form-control">
