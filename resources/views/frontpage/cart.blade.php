@@ -67,29 +67,29 @@
                                             <th style="text-align: left; color: blue;"><h3>Product</h3></th>
                                             <th style="text-align: left; color: blue"><h3>Quantity</h3></th>
                                             <th style="text-align: left; color: blue"><h3>Unit price</h3></th>
-                                            <th style="text-align: left; color: blue"><h3>Discount</h3></th>
                                             <th style="text-align: left; color: blue"><h3>Total</h3></th>
-                                            <th style="text-align: left; color: blue" colspan="2"><h3>Remove</h3></th>
+                                            <th style="text-align: left; color: blue"><h3>Update/Remove</h3></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    	@foreach ($content as $item)
-	
-                                        <tr>
-                                            
-                                            <td><a href="#"><img src="{!! asset($item->options['img']) !!}" alt=}"></a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="{!! $item->qty !!}" class="form-control">
-                                            </td>
-                                            
-                                            <td>{!! number_format($item->price,0,",",".") !!}</td>
-                                            <td>{!! $item->qty !!}</td>
-                                            <td><h4>{!! number_format($item->price*$item->qty,0,",",".") !!}</h4></td>
-                                            <td><a href="{{!! url('xoa-san-pham',['id'=>$item->rowId]) !!}}"><img src="../../../images/trash.png" alt=""></a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
+                                    	<form method="POST" action="">
+                                    		<input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
+	                                    	@foreach ($content as $item)
+	                                        <tr>
+	                                            <td><a href="#"><img src="{!! asset($item->options['img']) !!}" alt=""}"></a>
+	                                            </td>
+	                                            <td class="quantity" >
+	                                                <input class="qty" type="number" value="{!! $item->qty !!}" />
+	                                            </td>
+	                                            <td>{!! number_format($item->price,0,",",".") !!}</td>
+	                                            <td><h4>{!! number_format($item->price*$item->qty,0,",",".") !!}</h4></td>
+	                                            <td class="change">
+	                                            	<a class="updatecart" id="{!! $item->rowId !!}"  href="#"><img src="../../../images/update.png" alt=""></a>
+	                                            	<a href="{{!! url('xoa-san-pham',['id'=>$item->rowId]) !!}}"><img src="../../../images/trash.png" alt=""></a>
+	                                            </td>
+	                                        </tr>
+	                                        @endforeach
+                                    	</form>
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -104,11 +104,13 @@
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                    <a href="#" class="btn btn-default">
+                                    	<img src="../../../images/left.png" alt="">
+                                    </a>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
-                                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                                    <button type="" class="btn btn-primary">
+                                    	<img src="../../../images/right.png" alt="">
                                     </button>
                                 </div>
                             </div>
@@ -138,7 +140,7 @@
     <script src="/../../../js/bootstrap-hover-dropdown.js"></script>
     <script src="/../../../js/owl.carousel.min.js"></script>
     <script src="/../../../js/front.js"></script>
-
+	<script src="/../../../js/update-cart.js"></script>
 
 
 </body>
