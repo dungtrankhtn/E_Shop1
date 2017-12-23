@@ -6,7 +6,7 @@
             <div class="section group">
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview.html"> <img src="https://cdn1.tgdd.vn/Products/Images/42/114111/iphone-x-256gb-1-300x300.jpg" alt="" /></a>
+                        <a href="{{url('preview/144')}}"> <img src="https://cdn1.tgdd.vn/Products/Images/42/114111/iphone-x-256gb-1-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
                         <h2>Iphone X 256GB</h2>
@@ -16,12 +16,12 @@
                 </div>
                 <div class="listview_1_of_2 images_1_of_2">
                     <div class="listimg listimg_2_of_1">
-                        <a href="preview.html"><img src="https://cdn4.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg" alt="" /></a>
+                        <a href="{{url('preview/9')}}"><img src="https://cdn4.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
                         <h2>Samsung Galaxy S8</h2>
                         <p></p>
-                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
+                        <div class="button"><span><a href="{{url('preview/9')}}">Add to cart</a></span></div>
                     </div>
                 </div>
             </div>

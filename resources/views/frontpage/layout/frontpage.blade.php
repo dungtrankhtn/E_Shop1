@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Free Smart Store Website Template | Home :: w3layouts</title>
+    <title>E Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>

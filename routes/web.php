@@ -11,8 +11,11 @@
 |
 */
 //Route cho trang chủ
-Route::get('/home', function () {
-    return view('frontpage.home');
+//Route::get('/home', function () {
+//    return view('frontpage.home');
+//});
+Route::get('/test', function () {
+    return view('frontpage.login');
 });
 //Route::get('/login', function () {
 //    return view('frontpage.login');
@@ -120,5 +123,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/price', function () {
-    return view('adminpage.price');});

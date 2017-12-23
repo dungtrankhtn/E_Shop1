@@ -321,46 +321,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a> </div>
         <div class="menu">
             <ul id="menu" >
-                <li id="menu-home" ><a href="{{url('admin_matterial/dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+                <li id="menu-home" ><a href="{{url('admin/dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
                 <li><a href="#"><i class="fa fa-cogs"></i><span>Components</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul>
-                        <li><a href="{{url('admin_matterial/grids')}}">Grids</a></li>
-                        <li><a href="{{url('admin_matterial/portlets')}}">Portlets</a></li>
+                        <li><a href="{{url('admin/grids')}}">Grids</a></li>
+                        <li><a href="{{url('admin/portlets')}}">Portlets</a></li>
                     </ul>
                 </li>
                 <li id="menu-comunicacao" ><a href="#"><i class="fa fa-book nav_icon"></i><span>Element</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul id="menu-comunicacao-sub" >
-                        <li id="menu-mensagens" style="width: 120px" ><a href="{{url('admin_matterial/buttons')}}">Buttons</a>
+                        <li id="menu-mensagens" style="width: 120px" ><a href="{{url('admin/buttons')}}">Buttons</a>
                         </li>
-                        <li id="menu-arquivos" ><a href="{{url('admin_matterial/typography')}}">Typography</a></li>
-                        <li id="menu-arquivos" ><a href="{{url('admin_matterial/icons')}}">Icons</a></li>
+                        <li id="menu-arquivos" ><a href="{{url('admin/typography')}}">Typography</a></li>
+                        <li id="menu-arquivos" ><a href="{{url('admin/icons')}}">Icons</a></li>
                     </ul>
                 </li>
-                <li><a href="{{url('admin_matterial/maps')}}"><i class="fa fa-map-marker"></i><span>Maps</span></a></li>
+                <li><a href="{{url('admin/maps')}}"><i class="fa fa-map-marker"></i><span>Maps</span></a></li>
                 <li id="menu-academico" ><a href="#"><i class="fa fa-file-text"></i><span>Pages</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul id="menu-academico-sub" >
-                        <li id="menu-academico-boletim" ><a href="{{url('admin_matterial/login')}}">Login</a></li>
-                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin_matterial/signup')}}">Sign Up</a></li>
+                        <li id="menu-academico-boletim" ><a href="{{url('admin/login')}}">Login</a></li>
+                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin/signup')}}">Sign Up</a></li>
                     </ul>
                 </li>
 
-                <li><a href="{{url('admin_matterial/charts')}}"><i class="fa fa-bar-chart"></i><span>Charts</span></a></li>
+                <li><a href="{{url('admin/charts')}}"><i class="fa fa-bar-chart"></i><span>Charts</span></a></li>
                 <li><a href="#"><i class="fa fa-envelope"></i><span>Mailbox</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin_matterial/inbox')}}">Inbox</a></li>
-                        <li id="menu-academico-boletim" ><a href="{{url('admin_matterial/inbox-details')}}">Compose email</a></li>
+                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin/inbox')}}">Inbox</a></li>
+                        <li id="menu-academico-boletim" ><a href="{{url('admin/inbox-details')}}">Compose email</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="fa fa-cog"></i><span>System</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin_matterial/404')}}">404</a></li>
-                        <li id="menu-academico-boletim" ><a href="{{url('admin_matterial/blank')}}">Blank</a></li>
+                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin/404')}}">404</a></li>
+                        <li id="menu-academico-boletim" ><a href="{{url('admin/blank')}}">Blank</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="fa fa-shopping-cart"></i><span>E-Commerce</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul id="menu-academico-sub" >
-                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin_matterial/product')}}">Product</a></li>
-                        <li id="menu-academico-boletim" ><a href="{{url('admin_matterial/price')}}">Price</a></li>
+                        <li id="menu-academico-avaliacoes" ><a href="{{url('admin/product')}}">Product</a></li>
+                        <li id="menu-academico-boletim" ><a href="{{url('admin/price')}}">Price</a></li>
                     </ul>
                 </li>
             </ul>

@@ -48,7 +48,7 @@
                             <h2>{{ $type->name }}</h2>
                             <p>{{ $type->decriptions }}</p>
                             <p><span class="strike">{{ $type->price }}</span><span class="price">{{ $type->price }}</span></p>
-                            <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
+                            <div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="{!!url('mua-hang',[$type->id])!!}" class="cart-button">Add to Cart</a></span> </div>
                             <div class="button"><span><a href="preview.html" class="details">Details</a></span></div>
                         </div>
                     @endforeach
