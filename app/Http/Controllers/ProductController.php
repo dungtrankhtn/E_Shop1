@@ -50,7 +50,7 @@ class ProductController extends Controller
     public function giohang()
     {
         $content = Cart::content(); 
-        $total = Cart::total();
+        $total = Cart::subtotal();
         $count = Cart::count();
         return view("frontpage.cart", compact('content','total','count'));
     }
