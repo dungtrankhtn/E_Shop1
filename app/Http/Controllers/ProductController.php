@@ -60,6 +60,16 @@ class ProductController extends Controller
         return redirect()->route('giohang');
     }
 
+    public function capnhat()
+    {
+           if(request()->ajax())
+            {
+                $id = request()->get('id');
+                $qty = request()->get('qty');
+                Cart::update($id, $qty);
+                echo "oke";
+            }
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -64,6 +64,9 @@ Route::get('gio-hang', ['as'=>'giohang','uses'=>'ProductController@giohang']);
 //Route xóa sản phẩm khỏi giỏ hàng.
 Route::get('xoa-san-pham/{id}', ['as'=>'xoasanpham','uses'=>'ProductController@xoasanpham']);
 
+//Route cập nhật sản phẩm trong giỏ hàng.
+Route::get('cap-nhat/{id}/{qty}', ['as'=>'capnhat','uses'=>'ProductController@capnhat']);
+
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {
           return view('admin.dashboard');
