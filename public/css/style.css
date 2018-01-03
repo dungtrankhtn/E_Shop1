@@ -58,7 +58,7 @@ body{
 	float:left;
 	border: 1px solid #DBDBDB;
 	position:relative;
-	width:47%;
+	width:38%;
 }
 .search_box input[type="text"]{
 	width:74%;
@@ -98,7 +98,7 @@ body{
 }
 .shopping_cart{
 	float:left;
-	width: 202px;
+	width: 20%;
 	position:relative;
 	margin-left:15px;
 	padding: 0 0 0 46px;
@@ -1598,7 +1598,7 @@ ul.sub-menu.list-unstyled.sub-menu3 {
 		width: 75% !important;
 	}
 	.logo {
-		width: 25% !important;
+		width: 16% !important;
 	}
 	.sort, .show {
 		width: 20%;
@@ -3191,4 +3191,16 @@ input {
     .totals-value {
         width: 40%;
     }
+}
+/*For Login*/
+.dropdown-menu
+{
+	float:left
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
