@@ -77,13 +77,21 @@ class ProductController extends Controller
     public function comment($id, Request $request)
     {
         $idproduct = $id;
-        $p_d =  DB::table('product')->where('id',$id)->first();
+        $p_d =  DB::table('comment')->where('id',$id)->first();
         $p_d->id_product = $idproduct;
         $p_d->id_user = Auth::user()->id;
         $p_d->content = $request->cmt;
 
         return redirect()->route('preview')->with('thongbao','Viết bình luận thành công!');
     }
+
+    public function timkiem(Request $request)
+    {
+        $tukhoa = $request->tukhoa;
+        $product = DB::table('product')->where('name','like',$tukhoa)->take(30)->paginate(8);
+        return view("frontpage.search",['product' => $product,'tukhoa' => $tukhoa]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

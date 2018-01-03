@@ -68,7 +68,10 @@ Route::get('xoa-san-pham/{id}', ['as'=>'xoasanpham','uses'=>'ProductController@x
 Route::get('cap-nhat/{id}/{qty}', ['as'=>'capnhat','uses'=>'ProductController@capnhat']);
 
 //Route bình luận.
-Route::post('binh-luan/{id}',['as'=>'binhluan','uses'=>'ProductController@comment']);
+Route::post('binhluan/{id}',['as'=>'binhluan','uses'=>'ProductController@comment']);
+
+//Route tìm kiếm.
+Route::post('timkiem','ProductController@timkiem');
 
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {

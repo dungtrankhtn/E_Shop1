@@ -12,7 +12,7 @@
                     <div class="text list_2_of_1">
                         <h2>{{ $p_f->name }}</h2>
                         <p>{{$p_f->decriptions}}</p>
-                        <div class="button"><span><a href="{!!url('mua-hang',[$p_f->id])!!}">Add to cart</a></span></div>
+                        <div class="button"><span><a href="{!!url('preview',[$p_f->id])!!}" class="details">Details</a></span></div>
                     </div>
                     @endforeach
                 </div>
@@ -69,26 +69,26 @@
                 @endforeach
             </div>
             <div class="page-no">
-                    <p>Result Pages:
-                        <ul>
-                            @if($product_list->currentPage() != 1)
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() - 1)) !!}"> Prev </a>]
-                                </li>
-                            @endif
-                            @for($i =0 ; $i <= $product_list->lastPage(); $i = $i + 1)
-                            <li class="{!! ($product_list->currentPage() == $i) ? 'active' : '' !!}">
-                                <a href="{!! str_replace('/?','?',$product_list->url($i)) !!}">{!! $i !!}</a>
+                <p>Result Pages:
+                    <ul>
+                        @if($product_list->currentPage() != 1)
+                            <li>
+                                [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() - 1)) !!}"> Prev </a>]
                             </li>
-                            @endfor
-                            @if($product_list->currentPage() != $product_list->lastPage())
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() + 1)) !!}"> Next </a >]
-                                </li>
-                            @endif
-                        </ul>
-                    </p>
-                </div>
+                        @endif
+                        @for($i =0 ; $i <= $product_list->lastPage(); $i = $i + 1)
+                        <li class="{!! ($product_list->currentPage() == $i) ? 'active' : '' !!}">
+                            <a href="{!! str_replace('/?','?',$product_list->url($i)) !!}">{!! $i !!}</a>
+                        </li>
+                        @endfor
+                        @if($product_list->currentPage() != $product_list->lastPage())
+                            <li>
+                                [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() + 1)) !!}"> Next </a >]
+                            </li>
+                        @endif
+                    </ul>
+                </p>
+            </div>
             <div class="content_bottom">
                 <div class="heading">
                     <h3>New Products</h3>
