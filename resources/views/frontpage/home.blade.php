@@ -5,47 +5,18 @@
         <div class="header_bottom_left">
             <div class="section group">
                 <div class="listview_1_of_2 images_1_of_2">
+                    @foreach ($product_feature as $p_f)
                     <div class="listimg listimg_2_of_1">
                         <a href="{{url('preview/144')}}"> <img src="https://cdn1.tgdd.vn/Products/Images/42/114111/iphone-x-256gb-1-300x300.jpg" alt="" /></a>
                     </div>
                     <div class="text list_2_of_1">
-                        <h2>Iphone X 256GB</h2>
-                        <p>Hàng sắp về!</p>
-                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
+                        <h2>{{ $p_f->name }}</h2>
+                        <p>{{$p_f->decriptions}}</p>
+                        <div class="button"><span><a href="{!!url('mua-hang',[$p_f->id])!!}">Add to cart</a></span></div>
                     </div>
+                    @endforeach
                 </div>
-                <div class="listview_1_of_2 images_1_of_2">
-                    <div class="listimg listimg_2_of_1">
-                        <a href="{{url('preview/9')}}"><img src="https://cdn4.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg" alt="" /></a>
-                    </div>
-                    <div class="text list_2_of_1">
-                        <h2>Samsung Galaxy S8</h2>
-                        <p></p>
-                        <div class="button"><span><a href="{{url('preview/9')}}">Add to cart</a></span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="section group">
-                <div class="listview_1_of_2 images_1_of_2">
-                    <div class="listimg listimg_2_of_1">
-                        <a href="preview.html"> <img src="https://cdn4.tgdd.vn/Products/Images/44/88629/apple-macbook-pro-15-mlh32sa-h-300x300.jpg" alt="" /></a>
-                    </div>
-                    <div class="text list_2_of_1">
-                        <h2>Macbook Pro</h2>
-                        <p>Đẳng cấp Sang trọng</p>
-                        <div class="button"><span><a href="preview.html">Add to cart</a></span></div>
-                    </div>
-                </div>
-                <div class="listview_1_of_2 images_1_of_2">
-                    <div class="listimg listimg_2_of_1">
-                        <a href="preview-6.html"><img src="images/pic1.png" alt="" /></a>
-                    </div>
-                    <div class="text list_2_of_1">
-                        <h2>Canon</h2>
-                        <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-                        <div class="button"><span><a href="preview-6.html">Add to cart</a></span></div>
-                    </div>
-                </div>
+                
             </div>
             <div class="clear"></div>
         </div>
@@ -76,33 +47,28 @@
         <div class="content">
             <div class="content_top">
                 <div class="heading">
-                    <h3>Feature Products</h3>
+                    <h3>Products Available</h3>
                 </div>
-                <div class="sort">
-                    <p>Sort by:
-                        <select>
-                            <option>Lowest Price</option>
-                            <option>Highest Price</option>
-                            <option>Lowest Price</option>
-                            <option>Lowest Price</option>
-                            <option>Lowest Price</option>
-                            <option>In Stock</option>
-                        </select>
-                    </p>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="section group">
+                @foreach ($product_list as $product)
+                <div class="grid_1_of_4 images_1_of_4">
+                    <a href="{!!url('preview',[$product->id])!!}"><img src="{{$product->image}}" alt="" /></a>
+                    <h2>{{ $product->name }}</h2>
+                    <p>{{$product->decriptions}}</p>
+                    <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
+                    <div class="button">
+                    <span>
+                        <img src="images/cart.jpg" alt="" />
+                        <a href="{!!url('mua-hang',[$product->id])!!}" class="cart-button">Add to Cart</a>
+                    </span> </div>
+                    <div class="button"><span><a href="{!!url('preview',[$product->id])!!}" class="details">Details</a></span></div>
                 </div>
-                <div class="show">
-                    <p>Show:
-                        <select>
-                            <option>4</option>
-                            <option>8</option>
-                            <option>12</option>
-                            <option>16</option>
-                            <option>20</option>
-                            <option>In Stock</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="page-no">
+                @endforeach
+            </div>
+            <div class="page-no">
                     <p>Result Pages:
                         <ul>
                             @if($product_list->currentPage() != 1)
@@ -123,62 +89,9 @@
                         </ul>
                     </p>
                 </div>
-                
-                <div class="clear"></div>
-            </div>
-            
-                <div class="section group">
-                    @foreach ($product_list as $product)
-                    <div class="grid_1_of_4 images_1_of_4">
-                        <a href="{!!url('preview',[$product->id])!!}"><img src="{{$product->image}}" alt="" /></a>
-                        <h2>{{ $product->name }}</h2>
-                        <p>{{$product->decriptions}}</p>
-                        <p><span class="strike">{{ $product->price }}</span><span class="price">{{ $product->price }}</span></p>
-                        <div class="button">
-                        <span>
-                            <img src="images/cart.jpg" alt="" />
-                            <a href="{!!url('mua-hang',[$product->id])!!}" class="cart-button">Add to Cart</a>
-                        </span> </div>
-                        <div class="button"><span><a href="{!!url('preview',[$product->id])!!}" class="details">Details</a></span></div>
-                    </div>
-                    @endforeach
-                </div>
-            
             <div class="content_bottom">
                 <div class="heading">
                     <h3>New Products</h3>
-                </div>
-                <div class="sort">
-                    <p>Sort by:
-                        <select>
-                            <option>Lowest Price</option>
-                            <option>Highest Price</option>
-                            <option>Lowest Price</option>
-                            <option>Lowest Price</option>
-                            <option>Lowest Price</option>
-                            <option>In Stock</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="show">
-                    <p>Show:
-                        <select>
-                            <option>4</option>
-                            <option>8</option>
-                            <option>12</option>
-                            <option>16</option>
-                            <option>20</option>
-                            <option>In Stock</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="page-no">
-                    <p>Result Pages:<ul>
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li>[<a href="#"> Next>>></a >]</li>
-                    </ul></p>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -222,6 +135,27 @@
                     <p><span class="strike">$643.22</span><span class="price">$457.88</span></p>
                     <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
                     <div class="button"><span><a href="#" class="details">Details</a></span></div>
+                </div>
+                <div class="page-no">
+                    <p>Result Pages:
+                        <ul>
+                            @if($product_list->currentPage() != 1)
+                                <li>
+                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() - 1)) !!}"> Prev </a>]
+                                </li>
+                            @endif
+                            @for($i =0 ; $i <= $product_list->lastPage(); $i = $i + 1)
+                            <li class="{!! ($product_list->currentPage() == $i) ? 'active' : '' !!}">
+                                <a href="{!! str_replace('/?','?',$product_list->url($i)) !!}">{!! $i !!}</a>
+                            </li>
+                            @endfor
+                            @if($product_list->currentPage() != $product_list->lastPage())
+                                <li>
+                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() + 1)) !!}"> Next </a >]
+                                </li>
+                            @endif
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>

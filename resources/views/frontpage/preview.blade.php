@@ -107,6 +107,16 @@
 								<input type="text" value="" />
 							</div>
 							<div class="button"><span><a href="#">Add Tags</a></span></div>
+							<div class="well">
+								<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
+								</h4>
+								<form role="">
+									<div class="form-group">
+										<textarea class="form-control" name="cmt" id="cmt" rows="10"></textarea>
+									</div>
+									<button type="submit" class="btn btn-primary">Gửi</button>
+								</form>
+							</div>
 						</div>
 					</div>
 					<div class="rightsidebar span_3_of_1">

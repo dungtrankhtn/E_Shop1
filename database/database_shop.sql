@@ -244,6 +244,28 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 (1, 'member1', 'dungtran6665@gmail.com', '$2y$10$oNMpyZ0TFR5FVs9lF7dwJezIB6gz.yGwaEc9Nw8DR3TEtoUYRxMRq', 'jPWE9ako4riQ3ZtRfYlpxSo5fvdoAMzfKpw6fBIMP0lc3yLHzUc7NB68vT3e', '2017-12-11 04:42:11', '2017-12-11 04:42:11'),
 (2, 'lep', 'abc@example.com', '$2y$10$Ijd31pLkPqoMPTp3AFJCbO2ZwTw0P07EUuHbLetbw68A7Rqe73HIO', 'g3fVmn3i9mrsSFB3CjpdVdrrpAlFNlpLM2KqL9xwMZpynq3v8txR0B4pfEGc', '2017-12-12 05:22:20', '2017-12-12 05:22:20');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_user` int(10) NOT NULL,
+  `id_product` int(10) NOT NULL,
+  `content` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `id_user`, `id_product`,`content`) VALUES
+(1, 3, 200,'Comment test');
+
+-- --------------------------------------------------------
+
 --
 -- Indexes for dumped tables
 --
