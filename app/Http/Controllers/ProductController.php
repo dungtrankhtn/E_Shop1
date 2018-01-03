@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product_list = DB::table('product')->paginate(4);
+        $product_list = DB::table('product')->paginate(8);
         $product_feature = DB::table('product')->where('decriptions','Hàng Sắp về')->paginate(3);
         return view("frontpage.home", ['product_list' => $product_list,'product_feature' => $product_feature]);
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function get_product_by_type ($type)
     {
         
-        $product_type = DB::table('product')->where('type', $type)->get();
+        $product_type = DB::table('product')->where('type', $type)->paginate(8);;
         return view("frontpage.product", ['product_type' => $product_type]);
     }
 

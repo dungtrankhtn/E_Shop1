@@ -7,38 +7,28 @@
                     <div class="heading">
                         <h3>Feature Products</h3>
                     </div>
-                    <div class="sort">
-                        <p>Sort by:
-                            <select>
-                                <option>Lowest Price</option>
-                                <option>Highest Price</option>
-                                <option>Lowest Price</option>
-                                <option>Lowest Price</option>
-                                <option>Lowest Price</option>
-                                <option>In Stock</option>
-                            </select>
-                        </p>
-                    </div>
-                    <div class="show">
-                        <p>Show:
-                            <select>
-                                <option>4</option>
-                                <option>8</option>
-                                <option>12</option>
-                                <option>16</option>
-                                <option>20</option>
-                                <option>In Stock</option>
-                            </select>
-                        </p>
-                    </div>
+                    
                     <div class="page-no">
-                        <p>Result Pages:<ul>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li>[<a href="#"> Next>>></a >]</li>
-                        </ul></p>
-                    </div>
+                    <p>Result Pages:
+                        <ul>
+                            @if($product_type->currentPage() != 1)
+                                <li>
+                                    [<a href="{!! str_replace('/?','?',$product_type->url($product_type->currentPage() - 1)) !!}"> Prev </a>]
+                                </li>
+                            @endif
+                            @for($i =0 ; $i <= $product_type->lastPage(); $i = $i + 1)
+                            <li class="{!! ($product_type->currentPage() == $i) ? 'active' : '' !!}">
+                                <a href="{!! str_replace('/?','?',$product_type->url($i)) !!}">{!! $i !!}</a>
+                            </li>
+                            @endfor
+                            @if($product_type->currentPage() != $product_type->lastPage())
+                                <li>
+                                    [<a href="{!! str_replace('/?','?',$product_type->url($product_type->currentPage() + 1)) !!}"> Next </a >]
+                                </li>
+                            @endif
+                        </ul>
+                    </p>
+                </div>
                     <div class="clear"></div>
                 </div>
                 <div class="section group">
@@ -53,42 +43,6 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="content_bottom">
-                    <div class="heading">
-                        <h3>New Products</h3>
-                    </div>
-                    <div class="sort">
-                        <p>Sort by:
-                            <select>
-                                <option>Lowest Price</option>
-                                <option>Highest Price</option>
-                                <option>Lowest Price</option>
-                                <option>Lowest Price</option>
-                                <option>Lowest Price</option>
-                                <option>In Stock</option>
-                            </select>
-                        </p>
-                    </div>
-                    <div class="show">
-                        <p>Show:
-                            <select>
-                                <option>4</option>
-                                <option>8</option>
-                                <option>12</option>
-                                <option>16</option>
-                                <option>20</option>
-                                <option>In Stock</option>
-                            </select>
-                        </p>
-                    </div>
-                    <div class="page-no">
-                        <p>Result Pages:<ul>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li>[<a href="#"> Next>>></a >]</li>
-                        </ul></p>
-                    </div>
                     <div class="clear"></div>
                 </div>
                 {{--<div class="section group">--}}
@@ -97,7 +51,9 @@
                         {{--<div class="discount">--}}
                             {{--<span class="percentage">40%</span>--}}
                         {{--</div>--}}
+                        <br>
                         {{--<h2>Lorem Ipsum is simply </h2>--}}
+                        <br>
                         {{--<p><span class="strike">$438.99</span><span class="price">$403.66</span></p>--}}
                         {{--<div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>--}}
                         {{--<div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>--}}
