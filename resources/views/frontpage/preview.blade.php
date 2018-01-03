@@ -108,9 +108,13 @@
 							</div>
 							<div class="button"><span><a href="#">Add Tags</a></span></div>
 							<div class="well">
+								@if(session('thongbao'))
+									{{session('thongbao')}}
+								@endif
 								<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
 								</h4>
-								<form role="">
+								<form action="{!!url('binh-luan',[$product_detail->id])!!}}" method="POST" role="">
+									<input type="hidden" name="_token" value="{{csrf_token()}}" />
 									<div class="form-group">
 										<textarea class="form-control" name="cmt" id="cmt" rows="10"></textarea>
 									</div>

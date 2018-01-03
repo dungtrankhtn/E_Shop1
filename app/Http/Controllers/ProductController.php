@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Auth;
+
 use Cart;
 
 class ProductController extends Controller
@@ -70,6 +72,17 @@ class ProductController extends Controller
                 Cart::update($id, $qty);
                 echo "oke";
             }
+    }
+
+    public function comment($id, Request $request)
+    {
+        $idproduct = $id;
+        $p_d =  DB::table('product')->where('id',$id)->first();
+        $p_d->id_product = $idproduct;
+        $p_d->id_user = Auth::user()->id;
+        $p_d->content = $request->cmt;
+
+        return redirect()->route('preview')->with('thongbao','Viết bình luận thành công!');
     }
     /**
      * Show the form for creating a new resource.
