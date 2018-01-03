@@ -91,7 +91,7 @@
 								<div class="rating">
 									<p>Rating:<img src="{{asset('images/rating.png')}}"><span>[3 of 5 Stars]</span></p>
 								</div>
-								<div class="button"><span><a href="#">Add to Cart</a></span></div>
+								<div class="button"><span><a href="{!!url('mua-hang',[$product_detail->id])!!}">Add to Cart</a></span></div>
 								<div class="clear"></div>
 							</div>
 						</div>
@@ -113,7 +113,7 @@
 								@endif
 								<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
 								</h4>
-								<form action="{!!url('binh-luan',[$product_detail->id])!!}}" method="POST" role="">
+								<form action="binhluan/{{ $product_detail->id }}" method="POST" role="">
 									<input type="hidden" name="_token" value="{{csrf_token()}}" />
 									<div class="form-group">
 										<textarea class="form-control" name="cmt" id="cmt" rows="10"></textarea>

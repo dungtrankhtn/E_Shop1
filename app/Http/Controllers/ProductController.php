@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product_list = DB::table('product')->paginate(4);
+        $product_list = DB::table('product')->paginate(8);
         $product_feature = DB::table('product')->where('decriptions','Hàng Sắp về')->paginate(3);
         return view("frontpage.home", ['product_list' => $product_list,'product_feature' => $product_feature]);
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function get_product_by_type ($type)
     {
         
-        $product_type = DB::table('product')->where('type', $type)->get();
+        $product_type = DB::table('product')->where('type', $type)->paginate(8);;
         return view("frontpage.product", ['product_type' => $product_type]);
     }
 
@@ -77,13 +77,21 @@ class ProductController extends Controller
     public function comment($id, Request $request)
     {
         $idproduct = $id;
-        $p_d =  DB::table('product')->where('id',$id)->first();
+        $p_d =  DB::table('comment')->where('id',$id)->first();
         $p_d->id_product = $idproduct;
         $p_d->id_user = Auth::user()->id;
         $p_d->content = $request->cmt;
 
         return redirect()->route('preview')->with('thongbao','Viết bình luận thành công!');
     }
+
+    public function timkiem(Request $request)
+    {
+        $tukhoa = $request->tukhoa;
+        $product = DB::table('product')->where('name','like',$tukhoa)->take(30)->paginate(8);
+        return view("frontpage.search",['product' => $product,'tukhoa' => $tukhoa]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
