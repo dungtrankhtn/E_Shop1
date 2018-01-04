@@ -14,7 +14,8 @@
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 
     <!-- For Login -->
-    
+        <script src="{{ asset('js/app.js') }}"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -147,28 +148,30 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}"><img src="{{asset('images/login.png')}}" alt="" title="login">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <button>
+                                <a href="{{ route('login') }}"><img src="{{asset('images/login.png')}}" alt="" title="login">Login</a>
+                            </button>
+                            <button>
+                            <a href="{{ route('register') }}">Register</a>
+                            </button>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ Auth::user()->name }}
+                                <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
+                                  <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"> Logout
                                         </a>
-
+                                    </li>
+                                    <li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
                                 </ul>
-                            </li>
+                              </div>
+                            </div>
                         @endguest
                     </ul>
                 </div>
