@@ -58,7 +58,7 @@ body{
 	float:left;
 	border: 1px solid #DBDBDB;
 	position:relative;
-	width:38%;
+	width:44%;
 }
 .search_box input[type="text"]{
 	width:74%;
@@ -151,7 +151,7 @@ body{
 .login{
 	float:left;
 	margin-left:10px;
-	width:60px;
+	width:15%;
 	height: 38px;
 	display: block;
 	border: 1px solid #CECECE;
@@ -160,6 +160,13 @@ body{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	background: url(../images/gradient_light-1.png) 0 0 repeat-x;
+}
+.login li{
+	float: left;
+	display: inline;
+	padding-left: 8px;
+	text-align: center;
+	margin-top: 10px;
 }
 .login span a img{
 	padding-top:8px;
@@ -3192,7 +3199,7 @@ input {
         width: 40%;
     }
 }
-/*For Login*/
+/*/*For Login*/
 .dropdown-menu
 {
 	float:left
@@ -3203,4 +3210,4 @@ input {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
+}*/
