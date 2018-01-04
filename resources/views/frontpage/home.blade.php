@@ -89,75 +89,7 @@
                     </ul>
                 </p>
             </div>
-            <div class="content_bottom">
-                <div class="heading">
-                    <h3>New Products</h3>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="section group">
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-3.html"><img src="images/new-pic1.jpg" alt="" /></a>
-                    <div class="discount">
-                        <span class="percentage">40%</span>
-                    </div>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <p><span class="strike">$438.99</span><span class="price">$403.66</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>
-                    <div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-4.html"><img src="images/new-pic2.jpg" alt="" /></a>
-                    <div class="discount">
-                        <span class="percentage">22%</span>
-                    </div>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <p><span class="strike">$667.22</span><span class="price">$621.75</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-4.html" class="cart-button">Add to Cart</a></span></div>
-                    <div class="button"><span><a href="preview-4.html" class="details">Details</a></span></div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-2.html"><img src="images/feature-pic2.jpg" alt="" /></a>
-                    <div class="discount">
-                        <span class="percentage">55%</span>
-                    </div>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <p><span class="strike">$457.22</span><span class="price">$428.02</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
-                    <div class="button"><span><a href="preview-2.html" class="details">Details</a></span></div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview-2.html"> <img src="images/new-pic3.jpg" alt="" /></a>
-                    <div class="discount">
-                        <span class="percentage">66%</span>
-                    </div>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <p><span class="strike">$643.22</span><span class="price">$457.88</span></p>
-                    <div class="button"><span><img src="images/cart.jpg" alt="" /><a href="preview-2.html" class="cart-button">Add to Cart</a></span> </div>
-                    <div class="button"><span><a href="#" class="details">Details</a></span></div>
-                </div>
-                <div class="page-no">
-                    <p>Result Pages:
-                        <ul>
-                            @if($product_list->currentPage() != 1)
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() - 1)) !!}"> Prev </a>]
-                                </li>
-                            @endif
-                            @for($i =0 ; $i <= $product_list->lastPage(); $i = $i + 1)
-                            <li class="{!! ($product_list->currentPage() == $i) ? 'active' : '' !!}">
-                                <a href="{!! str_replace('/?','?',$product_list->url($i)) !!}">{!! $i !!}</a>
-                            </li>
-                            @endfor
-                            @if($product_list->currentPage() != $product_list->lastPage())
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() + 1)) !!}"> Next </a >]
-                                </li>
-                            @endif
-                        </ul>
-                    </p>
-                </div>
-            </div>
+            <div class="clear"></div>
         </div>
     </div>
 </section>

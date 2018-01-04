@@ -14,7 +14,7 @@
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 
     <!-- For Login -->
-        <script src="{{ asset('js/app.js') }}"></script>
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -159,7 +159,13 @@
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ Auth::user()->name }}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                  <li>
+                                    <li>
+                                        <a href="{{url('/info')}}">Thông tin</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/change-pass')}}">Đổi mật khẩu</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();"> Logout
                                         </a>
@@ -170,7 +176,6 @@
                                         </form>
                                     </li>
                                 </ul>
-                              </div>
                             </div>
                         @endguest
                     </ul>
@@ -185,32 +190,6 @@
                 <ul class="menu list-unstyled">
                     <li><a href="{{ url('/') }}">Trang chủ</a></li>
                     @include('frontpage.shared.product_menu')
-                    <li><a href="{{ url('../topbrand') }}">Giao hàng</a>
-                        <ul class="sub-menu list-unstyled sub-menu2">
-                            <div class="navg-drop-main">
-                                <div class="nav-drop nav-top-brand">
-                                    <li><a href="products.html">Product 1</a></li>
-                                    <li><a href="products.html">Product 2</a></li>
-                                    <li><a href="products.html">Product 3</a></li>
-                                    <li><a href="products.html">Product 4</a></li>
-                                    <li><a href="products.html">Product 5</a></li>
-                                    <li><a href="products.html">Product 6</a></li>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                    <li><a href="{{ url('../services') }}">Dịch vụ</a>
-                        <ul class="sub-menu list-unstyled sub-menu3">
-                            <div class="navg-drop-main">
-                                <div class="nav-drop">
-                                    <li><a href="products.html">Product 4</a></li>
-                                    <li><a href="products.html">Product 5</a></li>
-                                    <li><a href="products.html">Product 6</a></li>
-                                </div>
-                                <div class="clear"> </div>
-                            </div>
-                        </ul>
-                    </li>
                     <li><a href="{{ url('/about') }}">Giới thiệu</a></li>
                     <li><a href="{{ url('/faq') }}">Faqs</a></li>
                     <li><a href="{{ url('/contract') }}">Liên hệ</a></li>
@@ -309,6 +288,7 @@
         });
     });
 </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </body>
 </html>

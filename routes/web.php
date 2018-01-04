@@ -73,6 +73,12 @@ Route::post('binhluan/{id}',['as'=>'binhluan','uses'=>'ProductController@comment
 //Route tìm kiếm.
 Route::post('timkiem','ProductController@timkiem');
 
+//Route thông tin người dùng.
+Route::get('info', ['as'=>'info','uses'=>'ProductController@info']);
+
+//Route thông tin người dùng.
+Route::get('change-pass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
+
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {
           return view('admin.dashboard');
@@ -126,7 +132,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 });
-
 
 Auth::routes();
 

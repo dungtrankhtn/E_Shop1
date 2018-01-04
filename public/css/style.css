@@ -41,9 +41,6 @@ body{
 .header{
 	background:#FFF;
 }
-.header_top{
-	padding:20px 0;
-}
 .logo{
 	float:left;
 	width:33%;
@@ -435,6 +432,7 @@ nav{
 	display:block;
 }
 .menu li{
+	width: 20%;
 	display:inline-block;
 	position:relative;
 	z-index:100;
