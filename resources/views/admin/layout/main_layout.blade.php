@@ -278,7 +278,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="dropdown-menu drp-mnu">
                                     <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
                                     <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                                    <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                    <li> <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a> </li>
                                 </ul>
                             </li>
                         </ul>
@@ -321,7 +321,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </a> </div>
         <div class="menu">
             <ul id="menu" >
-                <li id="menu-home" ><a href="{{url('admin/dashboard')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
+                <li id="menu-home" ><a href="{{url('/admin')}}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
                 <li><a href="#"><i class="fa fa-cogs"></i><span>Components</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul>
                         <li><a href="{{url('admin/grids')}}">Grids</a></li>
