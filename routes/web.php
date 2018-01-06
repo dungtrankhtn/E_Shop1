@@ -85,6 +85,16 @@ Route::group(['prefix'=>'admin'],function(){
       Route::get('/price', ['as'=>'admin.dashboard','uses'=>'AdminController@price'])->name('admin.price');
     });
 
+//Route thông tin người dùng.
+Route::get('info', ['as'=>'info','uses'=>'ProductController@info']);
+
+//Route thông tin người dùng.
+Route::get('change-pass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
+
+
 Auth::routes();
 
 
+Route::get('/frontpage', function () {
+    return view('frontpage.layout.frontpage');
+});
