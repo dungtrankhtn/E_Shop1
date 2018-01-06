@@ -50,7 +50,7 @@
 						<h2>Comments</h2>
 						<div class="product-tags">
 							<div class="well">
-								@if(isset($user))
+								@if(!isset($user))
 									@if(session('thongbao'))
 									@endif
 									<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
@@ -73,7 +73,7 @@
 				                <div class="panel-body">
 				                    <!-- load data -->
 				                    <input type="text" class="form-control" name="txt-FName" id=""
-				                    value="{{ $cmtt->content }}">
+				                    value="{{ $cmtt->content }}" readonly>
 				                </div>
 				            </div>
 				            @endforeach

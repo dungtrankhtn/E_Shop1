@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -66,6 +67,7 @@ class AdminController extends Controller
     }
     public function products()
     {
-        return view('admin.product');
+        $product_type = DB::table('product_type');
+        return view('admin.product',['product_type' => $product_type]);
     }
 }

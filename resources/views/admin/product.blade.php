@@ -14,7 +14,7 @@
                         <table>
                         </tr>
                             <th>Mã Sản Phẩm </th>
-                            <th><input class="form-control" value="" name="txtMa" placeholder="Mã Sản Phẩm" readonly/></th>
+                            <th><input class="form-control" value="" name="txtName" placeholder="Mã" /></th>
                         </tr>
                         <tr>
                             <th>Tên Sản Phẩm</th>
@@ -22,7 +22,19 @@
                         </tr>
                         <tr>
                             <th>Loại sản phẩm</th>
-                            <th><input class="form-control" value="" name="txtLoai" placeholder="Loại" readonly/></th>
+                            <div class="dropdown">
+                                <button class="btn btn-default  dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    @foreach($product_type as $types)
+                                    <li>
+                                        <a></a>
+                                    </li>
+                                    @endforeach
+                                    
+                                </ul></th>
+                            </div>
+                            <!-- <th><input class="form-control" value="" name="txtLoai" placeholder="Loại" readonly/></th> -->
                         </tr>
                         <tr>
                             <th>Giá</th>
@@ -56,3 +68,6 @@
         </div>
     </section>
 @endsection
+
+
+                             
