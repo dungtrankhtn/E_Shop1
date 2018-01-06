@@ -253,6 +253,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 CREATE TABLE `comments` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_user` int(10) NOT NULL,
+  `name_user` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_product` int(10) NOT NULL,
   `content` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -263,8 +264,8 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `id_user`, `id_product`,`content`) VALUES
-(1, 3, 200,'Comments test');
+INSERT INTO `comments` (`id`, `id_user`,`name_user`, `id_product`,`content`) VALUES
+(1, 3,'Duy', 200,'Comments test');
 
 -- --------------------------------------------------------
 

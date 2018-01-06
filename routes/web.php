@@ -77,7 +77,11 @@ Route::post('timkiem','ProductController@timkiem');
 Route::get('info', ['as'=>'info','uses'=>'ProductController@info']);
 
 //Route thông tin người dùng.
-Route::get('change-pass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
+
+//Route đổi mật khẩu.
+Route::get('change', ['as'=>'change','uses'=>'ProductController@change']);
+
+Route::post('changepass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
 
 Route::prefix('admin')->group(function () {
       Route::get('/dashboard', function () {

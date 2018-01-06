@@ -44,27 +44,31 @@
 						</div>
 						<div class="product-desc">
 							<h2>Product Details</h2>
-							<p><h4>{{ $product_detail->decriptions }}</h4></p>
+							<p><h6>{{ $product_detail->decriptions }}</h6></p>
 						</div>
+						<hr>
+						<h2>Comments</h2>
 						<div class="product-tags">
 							<div class="well">
-								@if(session('thongbao'))
-									{{session('thongbao')}}
+								@if(isset($user))
+									@if(session('thongbao'))
+									@endif
+									<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
+									</h4>
+									<form action="/binhluan/{{ $product_detail->id }}" method="POST" role="">
+										<input type="hidden" name="_token" value="{{csrf_token()}}" />
+										<div class="form-group">
+											<textarea class="form-control" name="cmt" id="cmt" rows="10"></textarea>
+										</div>
+										<button type="submit" class="btn btn-primary">Gửi</button>
+									</form>
 								@endif
-								<h4>Viết bình luận ... <span class="glyphicon glyphicon-pencil"></span>
-								</h4>
-								<form action="/binhluan/{{ $product_detail->id }}" method="POST" role="">
-									<input type="hidden" name="_token" value="{{csrf_token()}}" />
-									<div class="form-group">
-										<textarea class="form-control" name="cmt" id="cmt" rows="10"></textarea>
-									</div>
-									<button type="submit" class="btn btn-primary">Gửi</button>
-								</form>
 							</div>
+								<h3> {{session('thongbao')}}</h3>
 							@foreach ($comment_list as $cmtt)
 							<div class="panel panel-success" style="margin: 1em;">
 				                <div class="panel-heading">
-				                    <h3 class="panel-title">User Name Comment</h3>
+				                    <h3 class="panel-title">{{$cmtt->name_user}}</h3>
 				                </div>
 				                <div class="panel-body">
 				                    <!-- load data -->
@@ -74,6 +78,9 @@
 				            </div>
 				            @endforeach
 						</div>
+						<div class="page-no">
+                    	{!!$comment_list->links()!!}
+            </div>
 					</div>
 					<div class="rightsidebar span_3_of_1">
 						<h2>CATEGORIES</h2>

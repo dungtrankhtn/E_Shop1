@@ -68,27 +68,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="page-no">
-                <p>Result Pages:
-                    <ul>
-                        @if($product_list->currentPage() != 1)
-                            <li>
-                                [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() - 1)) !!}"> Prev </a>]
-                            </li>
-                        @endif
-                        @for($i =0 ; $i <= $product_list->lastPage(); $i = $i + 1)
-                        <li class="{!! ($product_list->currentPage() == $i) ? 'active' : '' !!}">
-                            <a href="{!! str_replace('/?','?',$product_list->url($i)) !!}">{!! $i !!}</a>
-                        </li>
-                        @endfor
-                        @if($product_list->currentPage() != $product_list->lastPage())
-                            <li>
-                                [<a href="{!! str_replace('/?','?',$product_list->url($product_list->currentPage() + 1)) !!}"> Next </a >]
-                            </li>
-                        @endif
-                    </ul>
-                </p>
-            </div>
+            {!!$product_list->links()!!}
             <div class="clear"></div>
         </div>
     </div>

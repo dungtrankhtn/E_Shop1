@@ -34,7 +34,7 @@
             </div>
             <div class="panel panel-success" style="margin: 1em;">
                 <div class="panel-body">
-                    <button type="submit" class="signupbtn" name="btnEdit">Lưu</button>
+                    <button type="submit" class="signupbtn" name="btnEdit">Cập nhật</button>
                 </div>
             </div>
         </form>

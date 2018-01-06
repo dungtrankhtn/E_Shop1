@@ -5,30 +5,9 @@
             <div class="content">
                 <div class="content_top">
                     <div class="heading">
-                        <h3>Feature Products</h3>
+                        <h3>Products Available</h3>
                     </div>
                     
-                    <div class="page-no">
-                    <p>Result Pages:
-                        <ul>
-                            @if($product_type->currentPage() != 1)
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_type->url($product_type->currentPage() - 1)) !!}"> Prev </a>]
-                                </li>
-                            @endif
-                            @for($i =0 ; $i <= $product_type->lastPage(); $i = $i + 1)
-                            <li class="{!! ($product_type->currentPage() == $i) ? 'active' : '' !!}">
-                                <a href="{!! str_replace('/?','?',$product_type->url($i)) !!}">{!! $i !!}</a>
-                            </li>
-                            @endfor
-                            @if($product_type->currentPage() != $product_type->lastPage())
-                                <li>
-                                    [<a href="{!! str_replace('/?','?',$product_type->url($product_type->currentPage() + 1)) !!}"> Next </a >]
-                                </li>
-                            @endif
-                        </ul>
-                    </p>
-                </div>
                     <div class="clear"></div>
                 </div>
                 <div class="section group">
@@ -58,7 +37,7 @@
                         {{--<div class="button"><span><img src="{{asset('images/cart.jpg')}}" alt="" /><a href="preview-3.html" class="cart-button">Add to Cart</a></span> </div>--}}
                         {{--<div class="button"><span><a href="preview-3.html" class="details">Details</a></span></div>--}}
                     {{--</div>--}}
-
+                    {!!$product_type->links()!!}
                 {{--</div>--}}
             </div>
         </div>

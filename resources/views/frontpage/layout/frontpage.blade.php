@@ -12,10 +12,9 @@
     <script type="text/javascript" src="{{asset('js/easing.js')}}"></script>
     <link href='//fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-
+    <link href="{{asset('css/boostrap.min.css')}}" rel="stylesheet" type="text/css" media="all"/>
     <!-- For Login -->
 
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -163,7 +162,7 @@
                                         <a href="{{url('/info')}}">Thông tin</a>
                                     </li>
                                     <li>
-                                        <a href="{{url('/change-pass')}}">Đổi mật khẩu</a>
+                                        <a href="{{url('/change')}}">Đổi mật khẩu</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

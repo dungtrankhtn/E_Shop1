@@ -22,6 +22,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $product_list = DB::table('product')->paginate(8);
         $product_feature = DB::table('product')->where('decriptions','Hàng Sắp về')->paginate(3);
         return view("frontpage.home", ['product_list' => $product_list,'product_feature' => $product_feature]);
@@ -33,8 +34,7 @@ class ProductController extends Controller
 
         //Lấy sản phẩm trong product theo id.
         $product_detail = DB::table('product')->where('id',$id)->first();
-        $comment_list = DB::table('comments')->where('id_product',$id)->get();
-        // $user_comment = $comment_list->id_user;
+        $comment_list = DB::table('comments')->where('id_product',$id)->paginate(5);
         
         return view("frontpage.preview", ['product_detail' => $product_detail, 'comment_list' => $comment_list]);
     }
@@ -82,16 +82,12 @@ class ProductController extends Controller
 
     public function comment($id, Request $request)
     {
-        // $prod = DB::table('product')->where('id',$id)->first();
-        // $p_d =  DB::table('comment')->where('id',$id)->first();
-        // $p_d->id_product = $prod->id;
-        // $p_d->id_user = Auth::user()->id;
-        // $p_d->content = $request->cmt;
         $id_product= $id;
         $comment = new comment;
         $prod = DB::table('product')->where('id',$id)->first()->id;
         $comment->id_product = $id_product;
         $comment->id_user = Auth::user()->id;
+        $comment->name_user = Auth::user()->name;
         $comment->content = $request->cmt;
         $comment->save();
         return redirect('preview/'.$id)->with('thongbao','Viết bình luận thành công!');
@@ -110,9 +106,26 @@ class ProductController extends Controller
         return view("frontpage.info",['user'=>$user]);
     }
 
-    public function changepass()
+    public function change()
     {
         return view("frontpage.password");
+    }
+
+    public function changepass(Request $request)
+    {
+        $user = Auth::user();
+        $this->validate($request,['password' => 'required|min:6|max:32',
+                                  'passwordagain' => 'required|same:password'
+                                 ],[
+                                  'password.required' => 'Bạn chưa nhập nhập mật khẩu!',
+                                  'password.min' => 'Mật khẩu phải có ít nhất 6 kí tự!',
+                                  'password.max' => 'Mật khẩu tối đa dài 32 kí tự',
+                                  'passwordagain.required' => 'Bạn chưa nhập lại mật khẩu!',
+                                  'passwordagain.same' => 'Mật khẩu nhập lại chưa khớp!'
+                                 ]);
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect("password")->with('thongbao','Đổi mật khẩu thành công!');
     }
 
     /**
