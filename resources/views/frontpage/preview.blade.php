@@ -73,7 +73,7 @@
 				                <div class="panel-body">
 				                    <!-- load data -->
 				                    <input type="text" class="form-control" name="txt-FName" id=""
-				                    value="{{ $cmtt->content }}">
+				                    value="{{ $cmtt->content }}" readonly>
 				                </div>
 				            </div>
 				            @endforeach
