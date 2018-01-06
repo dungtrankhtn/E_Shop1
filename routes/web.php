@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -10,20 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route cho trang chủ
-//Route::get('/home', function () {
-//    return view('frontpage.home');
-//});
-Route::get('/test', function () {
-    return view('frontpage.login');
-});
-//Route::get('/login', function () {
-//    return view('frontpage.login');
-//});
-//Route::get('/login', 'Auth\LoginController@redirectTo')->name('login');
-//Route::get('/signup', function () {
-//    return view('frontpage.signup');
-//});
 // Top brand route
 Route::get('/topbrand', function () {
     return view('frontpage.delivery');
@@ -73,62 +59,31 @@ Route::post('binhluan/{id}',['as'=>'binhluan','uses'=>'ProductController@comment
 //Route tìm kiếm.
 Route::post('timkiem','ProductController@timkiem');
 
-Route::prefix('admin')->group(function () {
-      Route::get('/dashboard', function () {
-          return view('admin.dashboard');
-      });
-      Route::get('/grids', function () {
-          return view('admin.grids');
-      });
-      Route::get('/portlets', function () {
-          return view('admin.portlets');
-      });
-      Route::get('/buttons', function () {
-          return view('admin.buttons');
-      });
-      Route::get('/typography', function () {
-          return view('admin.typography');
-      });
-      Route::get('/icons', function () {
-          return view('admin.icons');
-      });
-      Route::get('/maps', function () {
-          return view('admin.maps');
-      });
+    // Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
-//Route cho trang đăng nhập.
-
-
-      Route::get('/charts', function () {
-          return view('admin.charts');
-      });
-
-      Route::get('/inbox', function () {
-          return view('admin.inbox');
-      });
-      Route::get('/inbox-details', function () {
-          return view('admin.inbox-details');
-      });
-      Route::get('/404', function () {
-          return view('admin.404');
-      });
-      Route::get('/blank', function () {
-          return view('admin.blank');
-      });
-      Route::get('/product', function () {
-          return view('admin.product');
-      });
-      Route::get('/price', function () {
-          return view('admin.price');
-      });
-
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-});
-
-
-Auth::routes();
-
+Auth::routes(); 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix'=>'admin'],function(){
+      Route::get('/',['as' => 'admin.dashboard','uses' => 'AdminController@index'])->name('admin.dashboard');
+      Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+      Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+      Route::get('/grids',['as' => 'admin.dashboard','uses' => 'AdminController@grids'])->name('admin.grids');
+
+
+      Route::get('/portlets', ['as'=>'admin.dashboard','uses'=>'AdminController@portlets'])->name('admin.portlets');
+      Route::get('/buttons',['as'=>'admin.dashboard','uses'=>'AdminController@buttons'])->name('admin.buttons');
+      Route::get('/typography',['as'=>'admin.dashboard','uses'=>'AdminController@typography'])->name('admin.typography');
+      Route::get('/icons',['as'=>'admin.dashboard','uses'=>'AdminController@icons'])->name('admin.icons');
+      Route::get('/maps',['as'=>'admin.dashboard','uses'=>'AdminController@maps'])->name('admin.maps');
+
+      Route::get('/charts', ['as'=>'admin.dashboard','uses'=>'AdminController@charts'])->name('admin.charts');
+      Route::get('/inbox', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox'])->name('admin.inbox');
+      Route::get('/inbox-details', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox_details'])->name('admin.inbox-details');
+      Route::get('/404', ['as'=>'admin.dashboard','uses'=>'AdminController@error404'])->name('admin.404');
+      Route::get('/blank', ['as'=>'admin.dashboard','uses'=>'AdminController@blank'])->name('admin.blank');
+      Route::get('/product',['as' => 'admin.dashboard','uses' => 'AdminController@products'])->name('admin.product');
+      Route::get('/price', ['as'=>'admin.dashboard','uses'=>'AdminController@price'])->name('admin.price');
+    });
+
+
 

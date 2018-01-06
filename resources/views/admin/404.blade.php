@@ -9,7 +9,7 @@
                 <div class="error-right">
                     <h2>Oops! Page Not Open</h2>
                     <h4>Nothing Is Found Here!!</h4>
-                    <a href="{{url('/dashboard')}}">Go Back</a>
+                    <a href="{{url('/admin')}}">Go Back</a>
                 </div>
             </div>
         </div>
