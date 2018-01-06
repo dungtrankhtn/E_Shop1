@@ -1,4 +1,4 @@
-﻿hp
+﻿<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -89,11 +89,7 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('info', ['as'=>'info','uses'=>'ProductController@info']);
 
 //Route thông tin người dùng.
-
-//Route đổi mật khẩu.
-Route::get('change', ['as'=>'change','uses'=>'ProductController@change']);
-
-Route::post('changepass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
+Route::get('change-pass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
 
 
 Auth::routes();
