@@ -67,7 +67,7 @@ class AdminController extends Controller
     }
     public function products()
     {
-        $product_type = DB::table('product_type');
+        $product_type = DB::table('product_type')->get();
         return view('admin.product',['product_type' => $product_type]);
     }
 }
