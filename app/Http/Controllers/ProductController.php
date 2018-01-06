@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\User;
+use App\comment;
+
 use Cart;
 
 class ProductController extends Controller
@@ -30,7 +33,10 @@ class ProductController extends Controller
 
         //Lấy sản phẩm trong product theo id.
         $product_detail = DB::table('product')->where('id',$id)->first();
-        return view("frontpage.preview", ['product_detail' => $product_detail]);
+        $comment_list = DB::table('comments')->where('id_product',$id)->get();
+        // $user_comment = $comment_list->id_user;
+        
+        return view("frontpage.preview", ['product_detail' => $product_detail, 'comment_list' => $comment_list]);
     }
 
     public function get_product_by_type ($type)
@@ -76,20 +82,37 @@ class ProductController extends Controller
 
     public function comment($id, Request $request)
     {
-        $idproduct = $id;
-        $p_d =  DB::table('comment')->where('id',$id)->first();
-        $p_d->id_product = $idproduct;
-        $p_d->id_user = Auth::user()->id;
-        $p_d->content = $request->cmt;
-
-        return redirect()->route('preview')->with('thongbao','Viết bình luận thành công!');
+        // $prod = DB::table('product')->where('id',$id)->first();
+        // $p_d =  DB::table('comment')->where('id',$id)->first();
+        // $p_d->id_product = $prod->id;
+        // $p_d->id_user = Auth::user()->id;
+        // $p_d->content = $request->cmt;
+        $id_product= $id;
+        $comment = new comment;
+        $prod = DB::table('product')->where('id',$id)->first()->id;
+        $comment->id_product = $id_product;
+        $comment->id_user = Auth::user()->id;
+        $comment->content = $request->cmt;
+        $comment->save();
+        return redirect('preview/'.$id)->with('thongbao','Viết bình luận thành công!');
     }
 
     public function timkiem(Request $request)
     {
         $tukhoa = $request->tukhoa;
-        $product = DB::table('product')->where('name','like',$tukhoa)->take(30)->paginate(8);
+        $product = DB::table('product')->where('name','like',"%$tukhoa%")->Orwhere('decriptions','like','%$tukhoa%')->take(30)->paginate(8);
         return view("frontpage.search",['product' => $product,'tukhoa' => $tukhoa]);
+    }
+
+    public function info()
+    {
+        $user = Auth::user();
+        return view("frontpage.info",['user'=>$user]);
+    }
+
+    public function changepass()
+    {
+        return view("frontpage.password");
     }
 
     /**

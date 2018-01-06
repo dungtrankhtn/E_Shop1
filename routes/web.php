@@ -59,7 +59,7 @@ Route::post('binhluan/{id}',['as'=>'binhluan','uses'=>'ProductController@comment
 //Route tìm kiếm.
 Route::post('timkiem','ProductController@timkiem');
 
-    // Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
+// Route::get('/admin', 'AdminController@index')->name('admin.dashboard');
 
 Auth::routes(); 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -85,5 +85,6 @@ Route::group(['prefix'=>'admin'],function(){
       Route::get('/price', ['as'=>'admin.dashboard','uses'=>'AdminController@price'])->name('admin.price');
     });
 
+Auth::routes();
 
 

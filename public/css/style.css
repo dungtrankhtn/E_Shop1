@@ -41,9 +41,6 @@ body{
 .header{
 	background:#FFF;
 }
-.header_top{
-	padding:20px 0;
-}
 .logo{
 	float:left;
 	width:33%;
@@ -442,6 +439,7 @@ nav{
 	display:block;
 }
 .menu li{
+	width: 20%;
 	display:inline-block;
 	position:relative;
 	z-index:100;
@@ -615,7 +613,7 @@ ul.sub-menu.list-unstyled.sub-menu3 {
 	padding:1.5%;
 }
 .listimg_2_of_1 {
-	width: 48.2%;
+	width: 46.2%;
 }
 .list_2_of_1 {
 	width: 48.2%;
@@ -3210,4 +3208,8 @@ input {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> 91981760ad58e3562d3ce8ba42db6c0c4bad755e

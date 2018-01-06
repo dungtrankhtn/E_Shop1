@@ -247,22 +247,24 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Table structure for table `comments`
 --
 
-CREATE TABLE `comment` (
+CREATE TABLE `comments` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_user` int(10) NOT NULL,
   `id_product` int(10) NOT NULL,
   `content` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `comment`
+-- Dumping data for table `comments`
 --
 
-INSERT INTO `comment` (`id`, `id_user`, `id_product`,`content`) VALUES
-(1, 3, 200,'Comment test');
+INSERT INTO `comments` (`id`, `id_user`, `id_product`,`content`) VALUES
+(1, 3, 200,'Comments test');
 
 -- --------------------------------------------------------
 
