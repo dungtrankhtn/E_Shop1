@@ -62,7 +62,7 @@
 										</div>
 										<button type="submit" class="btn btn-primary">Gửi</button>
 									</form>
-								@endif
+								
 							</div>
 								<h3> {{session('thongbao')}}</h3>
 							@foreach ($comment_list as $cmtt)
@@ -77,6 +77,7 @@
 				                </div>
 				            </div>
 				            @endforeach
+				            @endif
 						</div>
 						<div class="page-no">
                     	{!!$comment_list->links()!!}
