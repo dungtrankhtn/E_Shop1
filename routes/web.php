@@ -105,9 +105,12 @@ Route::group(['prefix'=>'admin'],function(){
 //Route thông tin người dùng.
 Route::get('info', ['as'=>'info','uses'=>'ProductController@info']);
 
+Route::post('change-info/{id}',['as'=>'changeinfo','uses'=>'ProductController@update']);
+
 //Route thông tin người dùng.
 Route::get('change-pass', ['as'=>'changepass','uses'=>'ProductController@changepass']);
 
+Route::get('change', ['as'=>'change','uses'=>'ProductController@change']);
 
 Auth::routes();
 

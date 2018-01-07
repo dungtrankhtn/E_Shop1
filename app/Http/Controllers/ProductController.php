@@ -27,7 +27,6 @@ class ProductController extends Controller
         $product_feature = DB::table('product')->where('decriptions','Hàng Sắp về')->paginate(3);
         return view("frontpage.home", ['product_list' => $product_list,'product_feature' => $product_feature]);
     }
-
     public function preview ($id)
     {
         //Function cho trang chi tiết sản phẩm.
@@ -168,7 +167,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -180,7 +179,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->update([
+            'name' => $request->get('txt-FName'),
+            'email'=> $request->get('txtEmail')
+        ]);
+ 
+        return \Redirect::route('info',array($user->id))->with('message','Thông tin người dùng đã được cập nhật!');
     }
 
     /**
