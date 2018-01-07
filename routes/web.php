@@ -67,22 +67,26 @@ Route::group(['prefix'=>'admin'],function(){
       Route::get('/',['as' => 'admin.dashboard','uses' => 'AdminController@index'])->name('admin.dashboard');
       Route::get('login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
       Route::post('login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-      Route::get('/grids',['as' => 'admin.dashboard','uses' => 'AdminController@grids'])->name('admin.grids');
+      Route::get('grids',['as' => 'admin.dashboard','uses' => 'AdminController@grids'])->name('admin.grids');
 
+// Mấy cái rout linh tinh
+      Route::get('portlets', ['as'=>'admin.dashboard','uses'=>'AdminController@portlets'])->name('admin.portlets');
+      Route::get('buttons',['as'=>'admin.dashboard','uses'=>'AdminController@buttons'])->name('admin.buttons');
+      Route::get('typography',['as'=>'admin.dashboard','uses'=>'AdminController@typography'])->name('admin.typography');
+      Route::get('icons',['as'=>'admin.dashboard','uses'=>'AdminController@icons'])->name('admin.icons');
+      Route::get('maps',['as'=>'admin.dashboard','uses'=>'AdminController@maps'])->name('admin.maps');
+      Route::get('charts', ['as'=>'admin.dashboard','uses'=>'AdminController@charts'])->name('admin.charts');
+      Route::get('inbox', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox'])->name('admin.inbox');
+      Route::get('inbox-details', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox_details'])->name('admin.inbox-details');
+      Route::get('404', ['as'=>'admin.dashboard','uses'=>'AdminController@error404'])->name('admin.404');
+      Route::get('blank', ['as'=>'admin.dashboard','uses'=>'AdminController@blank'])->name('admin.blank');
+      Route::get('price', ['as'=>'admin.dashboard','uses'=>'AdminController@price'])->name('admin.price');
 
-      Route::get('/portlets', ['as'=>'admin.dashboard','uses'=>'AdminController@portlets'])->name('admin.portlets');
-      Route::get('/buttons',['as'=>'admin.dashboard','uses'=>'AdminController@buttons'])->name('admin.buttons');
-      Route::get('/typography',['as'=>'admin.dashboard','uses'=>'AdminController@typography'])->name('admin.typography');
-      Route::get('/icons',['as'=>'admin.dashboard','uses'=>'AdminController@icons'])->name('admin.icons');
-      Route::get('/maps',['as'=>'admin.dashboard','uses'=>'AdminController@maps'])->name('admin.maps');
+// Liên quan đến product(Thêm xóa sửa)
+      Route::get('product',['as' => 'admin.dashboard','uses'=>'AdminController@showProductsForm'])->name('admin.product');
 
-      Route::get('/charts', ['as'=>'admin.dashboard','uses'=>'AdminController@charts'])->name('admin.charts');
-      Route::get('/inbox', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox'])->name('admin.inbox');
-      Route::get('/inbox-details', ['as'=>'admin.dashboard','uses'=>'AdminController@inbox_details'])->name('admin.inbox-details');
-      Route::get('/404', ['as'=>'admin.dashboard','uses'=>'AdminController@error404'])->name('admin.404');
-      Route::get('/blank', ['as'=>'admin.dashboard','uses'=>'AdminController@blank'])->name('admin.blank');
-      Route::get('/product',['as' => 'admin.dashboard','uses' => 'AdminController@products'])->name('admin.product');
-      Route::get('/price', ['as'=>'admin.dashboard','uses'=>'AdminController@price'])->name('admin.price');
+      // sửa sản phầm
+      Route::get('product',['as' => 'admin.dashboard','uses' => 'AdminController@products'])->name('admin.product');
     });
 
 //Route thông tin người dùng.

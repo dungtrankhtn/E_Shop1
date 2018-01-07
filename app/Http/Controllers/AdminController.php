@@ -23,7 +23,8 @@ class AdminController extends Controller
      */
     public function index()
     {   
-        return view('admin.dashboard');
+        $products = DB::table('product')->get();
+        return view('admin.dashboard',['products' => $products]);
     }
 
     // Chặn middleware không cho vào các trang khác

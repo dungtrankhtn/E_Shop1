@@ -102,6 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--js-->
     <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" src="{{asset('admin_matterial/js/gmaps.js')}}"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="page-container">
