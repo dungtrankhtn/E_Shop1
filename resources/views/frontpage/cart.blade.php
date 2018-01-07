@@ -34,7 +34,8 @@
 
     <!-- your stylesheet with modifications -->
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
-
+    
+    <script src="{{asset('js/update-cart.js')}}"></script>
     <script src="{{asset('js/respond.min.js')}}"></script>
 
     <link rel="shortcut icon" href="#">
@@ -85,7 +86,7 @@
 	                                            <td><h4>{!! number_format($item->price*$item->qty,0,",",".") !!}</h4></td>
 	                                            <td class="change">
 	                                            	<a class="updatecart" id="{!! $item->rowId !!}"  href="#"><img src="../../../images/update.png" alt=""></a>
-	                                            	<a href="{{!! url('xoa-san-pham',['id'=>$item->rowId]) !!}}"><img src="../../../images/trash.png" alt=""></a>
+	                                            	<a href="{{ url('xoa-san-pham',['id'=>$item->rowId]) }}"><img src="../../../images/trash.png" alt=""></a>
 	                                            </td>
 	                                        </tr>
 	                                        @endforeach
@@ -140,7 +141,7 @@
     <script src="{{asset('js/bootstrap-hover-dropdown.js')}}"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/front.js')}}"></script>
-	<script src="{{asset('js/update-cart.js')}}"></script>
+
 
 
 </body>
