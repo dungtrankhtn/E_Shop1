@@ -3,6 +3,7 @@
     <section id="main">
         <div class="inner-block">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <button type="button" class="btn btn-success" style="float: right;"><a href="admin/grids"></a> Thêm Sản Phẩm</button>
                 <thead>
                     <tr class="odd gradeX" align="center">
                         <th>STT</th>

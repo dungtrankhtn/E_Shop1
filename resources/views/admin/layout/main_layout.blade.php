@@ -268,8 +268,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="profile_img">
                                         <span class="prfil-img"><img src="{{asset('admin_matterial/images/p1.png')}}" alt=""> </span>
                                         <div class="user-name">
-                                            <p>Malorum</p>
-                                            <span>Administrator</span>
+                                            <p>{{ Auth::user()->name }}</p>
                                         </div>
                                         <i class="fa fa-angle-down lnr"></i>
                                         <i class="fa fa-angle-up lnr"></i>
@@ -278,8 +277,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </a>
                                 <ul class="dropdown-menu drp-mnu">
                                     <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li>
-                                    <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li>
-                                    <li> <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                    <li> <a href="{{url('/info')}}"><i class="fa fa-user"></i> Profile</a> </li>
+                                    <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                                        <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

@@ -44,8 +44,7 @@
                                         </th>
                                     </tr>
                                 </table>
-                                <button type="submit" class="btn btn-default" value="edit" name="submitbutton" align-center>Edit</button>
-                                <button type="submit" class="btn btn-default" value="delete" name="submitbutton" align-center>Delete</button>
+                                <button type="submit" class="btn btn-success" value="edit" name="submitbutton" align-center>Done!</button>
                             </form>
                         </div>
                     </div>
