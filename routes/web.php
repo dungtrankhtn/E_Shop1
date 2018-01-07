@@ -84,9 +84,22 @@ Route::group(['prefix'=>'admin'],function(){
 
 // Liên quan đến product(Thêm xóa sửa)
       Route::get('product',['as' => 'admin.dashboard','uses'=>'AdminController@showProductsForm'])->name('admin.product');
+      // Sửa sản phẩm
+      route::get('editproduct/{id}',[
+        'as'=>'editproduct',
+        'uses'=>'AdminController@getDetailProduct'
+      ]);
+      Route::post('edit/{id}',[
+        'as'=>'edit',
+        'uses'=>'AdminController@editProduct'
+      ]);
+      // Xóa
+      Route::get('delete/{id}',[
+        'as'=>'delete',
+        'uses'=>'AdminController@deleteProduct'
+      ]);
 
-      // sửa sản phầm
-      Route::get('product',['as' => 'admin.dashboard','uses' => 'AdminController@products'])->name('admin.product');
+
     });
 
 //Route thông tin người dùng.

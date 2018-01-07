@@ -2,14 +2,6 @@
 @section('content')
     <section id="main">
         <div class="inner-block">
-            <label>Số lượng hiễn thị</label>
-            <select>
-                <option>10</option>
-                <option>50</option>
-                <option>100</option>
-                <option>150</option>
-                <option>200</option>
-            </select>
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr class="odd gradeX" align="center">
@@ -25,19 +17,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 1;?>
                     @foreach ($products as $product)
                     <tr class="odd gradeX" align="center">
-                        <td>1</td>
+                        <td>{{$i}}</td>
+                        <?php $i+=1;?>
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->decriptions}}</td>
                         <td><img src="{{$product->image}}"></td>
                         <td>{{$product->type}}</td>
-                        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href=""> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/product">Edit</a></td>
+                        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href="{{route('delete',$product->id)}}"> Delete</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('editproduct',$product->id)}}">Edit</a></td>
                     </tr>
                     @endforeach
+                <div class="row">{{$products->links()}}</div>
                 </tbody>
             </table>
             <div class="clearfix"> </div>

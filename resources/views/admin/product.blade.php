@@ -9,39 +9,30 @@
                 <div style="height: 100%">
                     <div class="row">
                         <div class="col-md-offset-2">
-                            <form method="post" action=""  enctype="multipart/form-data" >
+                            <form method="post" action="{{route('edit',$product->id)}}"  enctype="multipart/form-data" >
                                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                                 <table>
                                     </tr>
-                                        <th>Mã Sản Phẩm </th>
-                                        <th><input class="form-control" value="" name="txtName" placeholder="Mã" /></th>
+                                        <th>Mã Sản Phẩm</th>
+                                        <th><input class="form-control" value="{{$product->id}}" name="txtId" placeholder="Mã" readonly /></th>
                                     </tr>
                                     <tr>
                                         <th>Tên Sản Phẩm</th>
-                                        <th><input class="form-control" value="" name="txtName" placeholder="Tên Sản Phẩm"/>
+                                        <th><input class="form-control" value="{{$product->name}}" name="txtName" placeholder="Tên Sản Phẩm"/>
                                         </th>
                                     </tr>
                                     <tr>
                                         <th>Loại sản phẩm</th>
-                                        <th>
-                                            <form>
-                                                <div class="form-group">
-                                                    <select class="form-control" id="sel1">
-                                                        @foreach($product_type as $types)
-                                                            <option>{{$types->type_name}}</option>
-                                                        @endforeach
-                                                  </select>
-                                              </div>
-                                          </form>
-                                        </th>
+                                         <th><input class="form-control" value="{{$product->type_name}}" name="txtType" readonly></th>
+                               
                                     </tr>
                                     <tr>
                                         <th>Giá</th>
-                                        <th><input class="form-control" value="" name="txtGia" placeholder="Giá" /></th>
+                                        <th><input class="form-control" value="{{$product->price}}" name="txtPrice" placeholder="Giá" /></th>
                                     </tr>
                                     <tr>
                                         <th>Chi Tiết Kĩ Thuật</th>
-                                        <th><textarea class="form-control" rows="3" value="" name="txtMoTa" placeholder="Mô Tả" style="width:537px;height:268px;"></textarea></th>
+                                        <th><textarea class="form-control" rows="3" value="{{$product->decriptions}}" name="txtMoTa"  style="width:537px;height:268px;">{{$product->decriptions}}</textarea></th>
                                     </tr>
                                     <tr>
                                         <th></th>
