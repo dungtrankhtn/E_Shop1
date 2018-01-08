@@ -74,8 +74,18 @@ class AdminController extends Controller
     
     public function showProductsForm()
     {
-        //Lấy sản phẩm trong product theo id.
-        echo("Chua xong");
+        $product_type = DB::table('product_type')->get();
+        return view('admin.add_product',['product_type' => $product_type]);
+    }
+    public function addProduct(Request $rq)
+    {
+        $new_product = DB::table('product')->insert([
+            'name'=> $rq->txtName,
+            'price'=>$rq->txtPrice,
+            'decriptions'=>$rq->txtMoTa,
+            'image'=>$rq->txtImage,
+            'type'=>$rq->type_selected]);
+        return redirect('/admin');
     }
 
     public function getDetailProduct($id)

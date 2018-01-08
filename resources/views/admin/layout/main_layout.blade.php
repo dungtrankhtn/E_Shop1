@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="header-main">
                 <div class="header-left">
                     <div class="logo-name">
-                        <a href="{{url('/')}}"> <h1>Smart Shop</h1>
+                        <a href="{{url('/')}}"> <h1>DD Shop</h1>
                             <!--<img id="logo" src="" alt="Logo"/>-->
                         </a>
                     </div>

@@ -3202,3 +3202,7 @@ input {
   margin-bottom: 0;
   list-style: none;
 }
+.img-table img{
+	width: 280px;
+	height: auto;
+}
