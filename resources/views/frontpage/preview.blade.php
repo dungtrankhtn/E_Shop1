@@ -86,9 +86,9 @@
 					<div class="rightsidebar span_3_of_1">
 						<h2>CATEGORIES</h2>
 						<ul>
-							<li><a href="#">Mobile Phones</a></li>
+							<li><a href="{{url('product-type/1')}}">Mobile Phones</a></li>
 							<li><a href="#">Desktop</a></li>
-							<li><a href="#">Laptop</a></li>
+							<li><a href="{{url('product-type/2')}}">Laptop</a></li>
 							<li><a href="#">Accessories</a></li>
 							<li><a href="#">Software</a></li>
 							<li><a href="#">Sports & Fitness</a></li>
